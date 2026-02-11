@@ -1,9 +1,13 @@
-package org.example;
+package org.example.Commands;
+
+import org.example.Context;
 
 public interface Command {
-    public CommandResult execute(Context ctx, String[] args);
-    default public String getName() {
+    CommandResult execute(Context ctx, CommandArgs args);
+    default String getName() {
         String[] s = this.getClass().getName().split("\\.");
         return s[s.length-1].replace("Command", "").toLowerCase();
     }
+
+    CommandArgs getModel();
 }
