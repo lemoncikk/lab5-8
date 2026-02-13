@@ -1,11 +1,16 @@
 package org.example.Commands;
 
-import org.example.Context;
+import org.example.model.Context;
 
 public class ExitCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        return new CommandResult.Success("Bye!", null, true);
+        return new CommandResult("Bye", null, true);
+    }
+
+    @Override
+    public String getDescription() {
+        return "Завершает работу программы";
     }
 
     @Override

@@ -1,6 +1,4 @@
-package org.example;
-
-import org.example.model.MusicBand;
+package org.example.model;
 
 import java.util.ArrayList;
 import java.util.Stack;

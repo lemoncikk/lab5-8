@@ -1,4 +1,4 @@
-package org.example.Commands;
+package org.example.Commands.Fields;
 
 import org.example.Commands.exceptions.ValidationException;
 
@@ -24,6 +24,9 @@ public abstract class Field<T> {
 
     public void setValue(T value) {
         this.value = value;
+    }
+    public T getValue() {
+        return value;
     }
 
     protected abstract T validate(String rawString) throws ValidationException;

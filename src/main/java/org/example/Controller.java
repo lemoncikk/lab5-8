@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.Commands.*;
 import org.example.Commands.exceptions.CommandExecutionException;
+import org.example.model.Context;
 
 public class Controller {
     private final Context ctx;
@@ -10,6 +11,7 @@ public class Controller {
     public Controller(Context ctx) {
         this.ctx = ctx;
         registry.registry(new ExitCommand());
+        registry.registry(new AddCommand());
     }
 
     public CommandResult handle(String commandName, CommandArgs args) throws CommandExecutionException {
@@ -21,6 +23,7 @@ public class Controller {
 
     public CommandArgs getCommandModel(String commandName) throws CommandExecutionException {
         if (!registry.containsCommand(commandName)) {
+            System.out.println(commandName);
             throw new CommandExecutionException("Такой команды нет");
         }
         return registry.get(commandName).getModel();
