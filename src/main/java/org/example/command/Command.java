@@ -1,4 +1,4 @@
-package org.example.Commands;
+package org.example.command;
 
 import org.example.model.Context;
 

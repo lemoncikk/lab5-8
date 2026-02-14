@@ -1,32 +1,33 @@
 package org.example;
 
-import org.example.Commands.CommandArgs;
-import org.example.Commands.Fields.DataField;
-import org.example.Commands.Fields.EnumField;
-import org.example.Commands.Fields.Field;
-import org.example.Commands.exceptions.CommandExecutionException;
-import org.example.Commands.exceptions.ValidationException;
+import org.example.command.CommandArgs;
+import org.example.command.fields.DateField;
+import org.example.command.fields.EnumField;
+import org.example.command.exceptions.CommandExecutionException;
 
-import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 public class CLI {
+
     public void handleEnumField(EnumField<?> field) {
         String s = String.format(
-                "Выберите один из вариантов(и введите):\n %s",
+                "Выберите один из вариантов(и введите):\n%s",
                 field.formatAllowedValues()
         );
         System.out.println(s);
     }
-    public void handleDataField(DataField field) {
+
+    public void handleDataField(DateField field) {
         String s = String.format(
-                "Введите дату\n Формат даты: %s",
+                "Введите дату\nФормат даты: %s",
                 field.formatDataTimeFormat()
         );
         System.out.println(s);
     }
+
     public void exec(Controller ctrl) throws IOException {
         System.out.println("Start!");
         boolean stopFlag = false;
@@ -36,39 +37,18 @@ public class CLI {
             Parser.ParseResult parseRes = Parser.parse(br.readLine());
             try {
                 CommandArgs model = ctrl.getCommandModel(parseRes.getCommandName());
-                if (model != null) {
-                    var fields = model.getFields();
-                    for (int i = 0; i<fields.size(); i++) {
-                        var field = fields.get(i);
-                        if (field instanceof EnumField<?>) {
-                            handleEnumField((EnumField<?>) field);
-                        } else if (field instanceof DataField) {
-                            handleDataField((DataField) field);
-                        }
-                        else {
-                            String s = String.format(
-                                    "Введите: \n%s(%s)",
-                                    field.getName(),
-                                    field.getDescription()
-                            );
-                            System.out.println(s);
-                        }
-                        String input = br.readLine();
-                        if (input.trim().equals("exit")) {
-                            System.out.println("Выполнение команды прервано.");
-                            continue outerLoop;
-                        }
-                        if (field.isValid(input)) {
-                            field.setRawValue(input);
-                            continue;
-                        }
-                        System.out.println("Ошибка ввода, неверный тип аргумента. Попробуйте ещё раз!");
-                        i--;
-                    }
-
+                if (model != null && checkArgs(model, parseRes, br)) {
+                    continue outerLoop;
                 }
                 var res = ctrl.handle(parseRes.getCommandName(), model);
                 System.out.println(res.msg());
+                if (res.data() != null) {
+                    System.out.println(
+                            res.data().stream()
+                            .map(Object::toString)
+                            .collect(Collectors.joining("\n"))
+                    );
+                }
                 stopFlag = res.stopFlag();
             }
             catch (CommandExecutionException e) {
@@ -76,5 +56,46 @@ public class CLI {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    private boolean checkArgs(CommandArgs model, Parser.ParseResult res, BufferedReader br) throws IOException {
+        var fields = model.getFields();
+        var args = res.args;
+        for (int i = 0; i<fields.size(); i++) {
+            var field = fields.get(i);
+            if(i<args.size()) {
+                var arg = args.get(i);
+                if (field.isValid(arg)) {
+                    field.setRawValue(args.get(i));
+                    continue;
+                }
+                System.out.println("Один из введённых изначально аргументов некорректен");
+            }
+            if (field instanceof EnumField<?>) {
+                handleEnumField((EnumField<?>) field);
+            } else if (field instanceof DateField) {
+                handleDataField((DateField) field);
+            } else {
+                String s = String.format(
+                        "Введите:\n%s(%s)",
+                        field.getName(),
+                        field.getDescription()
+                );
+                System.out.println(s);
+            }
+            String input = br.readLine();
+            if (input.trim().equals("exit")) {
+                System.out.println("Выполнение команды прервано.");
+                return true;
+            }
+            if (!(field.isRequired()) && input.trim().isEmpty()) continue;
+            if (field.isValid(input)) {
+                field.setRawValue(input);
+                continue;
+            }
+            System.out.println("Ошибка ввода, неверный тип аргумента. Попробуйте ещё раз!");
+            i--;
+        }
+        return false;
     }
 }

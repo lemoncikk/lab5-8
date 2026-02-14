@@ -1,5 +1,8 @@
-package org.example.Commands;
+package org.example.command.commands;
 
+import org.example.command.Command;
+import org.example.command.CommandArgs;
+import org.example.command.CommandResult;
 import org.example.model.Context;
 
 public class ExitCommand implements Command {

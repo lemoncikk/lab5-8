@@ -1,6 +1,6 @@
 package org.example.model;
 
-import org.example.Commands.Fields.*;
+import org.example.command.fields.*;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class MusicBandBuilder {
                 ((LongField)(fields.get(1))).getValue(),
                 (((IntField)(fields.get(2)))).getValue()
         ));
-        mb.setCreationDate(((DataField)(fields.get(3))).getValue());
+        mb.setCreationDate(((DateField)(fields.get(3))).getValue());
         mb.setNumberOfParticipants(((LongField)(fields.get(4))).getValue());
         mb.setSinglesCount(((LongField)(fields.get(5))).getValue());
         mb.setAlbumsCount(((IntField)(fields.get(6))).getValue());

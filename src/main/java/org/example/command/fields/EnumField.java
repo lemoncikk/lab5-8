@@ -1,6 +1,6 @@
-package org.example.Commands.Fields;
+package org.example.command.fields;
 
-import org.example.Commands.exceptions.ValidationException;
+import org.example.command.exceptions.ValidationException;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

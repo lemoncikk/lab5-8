@@ -1,6 +1,4 @@
-package org.example.Commands;
-
-import java.util.Optional;
+package org.example.command;
 
 public abstract class Flag {
     private final String shortName;

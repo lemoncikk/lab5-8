@@ -1,6 +1,6 @@
-package org.example.Commands.Fields;
+package org.example.command.fields;
 
-import org.example.Commands.exceptions.ValidationException;
+import org.example.command.exceptions.ValidationException;
 
 public class BoolField extends Field<Boolean> {
     protected BoolField(String name, String description, boolean required, Boolean defaultValue) {

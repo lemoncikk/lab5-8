@@ -8,10 +8,45 @@
     <artifactId>lab5</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.example.Main</mainClass> <!-- Замените на реальный путь -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jakarta.bind.version>4.0.2</jakarta.bind.version>
+        <jaxb.runtime.version>4.0.5</jaxb.runtime.version>
     </properties>
+    <dependencies>
+    <!-- 1. API (обязательно для компиляции) -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>${jakarta.bind.version}</version>
+        </dependency>
 
+    <!-- 2. Реализация (выберите ОДНУ) -->
+
+    <!-- Вариант A: Официальная реализация GlassFish (рекомендуется) -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxb.runtime.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 </project>

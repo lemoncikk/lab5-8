@@ -1,4 +1,4 @@
-package org.example.Commands.exceptions;
+package org.example.command.exceptions;
 
 public class CommandExecutionException extends RuntimeException {
     private boolean stopFlag = false;

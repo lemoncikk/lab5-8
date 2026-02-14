@@ -1,6 +1,6 @@
-package org.example.Commands.Fields;
+package org.example.command.fields;
 
-import org.example.Commands.exceptions.ValidationException;
+import org.example.command.exceptions.ValidationException;
 
 public class StringField extends Field<String> {
 
@@ -9,6 +9,9 @@ public class StringField extends Field<String> {
     }
     public StringField(String name, String description, boolean required) {
         super(name, description, required, null, String.class);
+    }
+    public StringField(String name, String description) {
+        super(name, description, false, null, String.class);
     }
 
     @Override

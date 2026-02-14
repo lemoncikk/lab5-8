@@ -1,9 +1,9 @@
-package org.example.Commands;
+package org.example.command;
 
 import java.util.HashMap;
 
 public class CommandRegistry {
-    private HashMap<String, Command> map = new HashMap<>();
+    private final HashMap<String, Command> map = new HashMap<>();
 
     public void registry(Command cmd) {
         map.put(cmd.getName(), cmd);

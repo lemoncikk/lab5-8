@@ -1,6 +1,6 @@
-package org.example.Commands.Fields;
+package org.example.command.fields;
 
-import org.example.Commands.exceptions.ValidationException;
+import org.example.command.exceptions.ValidationException;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -8,12 +8,12 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class DataField extends Field<ZonedDateTime> {
-    public DataField(String name, String description, boolean required, ZonedDateTime defaultValue) {
+public class DateField extends Field<ZonedDateTime> {
+    public DateField(String name, String description, boolean required, ZonedDateTime defaultValue) {
         super(name, description, required, defaultValue, ZonedDateTime.class);
     }
 
-    public DataField(String name, String description, boolean required) {
+    public DateField(String name, String description, boolean required) {
         super(name, description, required, null, ZonedDateTime.class);
     }
     public String formatDataTimeFormat() {

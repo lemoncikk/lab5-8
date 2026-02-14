@@ -1,6 +1,6 @@
-package org.example.Commands;
+package org.example.command;
 
-import org.example.Commands.Fields.Field;
+import org.example.command.fields.Field;
 
 import java.util.ArrayList;
 
