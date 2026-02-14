@@ -71,6 +71,9 @@ public class CLI {
                 }
                 System.out.println("Один из введённых изначально аргументов некорректен");
             }
+            if(!field.isRequired()) {
+                System.out.println("Опциональный аргумент");
+            }
             if (field instanceof EnumField<?>) {
                 handleEnumField((EnumField<?>) field);
             } else if (field instanceof DateField) {

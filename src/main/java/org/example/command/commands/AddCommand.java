@@ -19,7 +19,7 @@ public class AddCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "";
+        return "Добавляет новый объект в коллекцию";
     }
 
     @Override

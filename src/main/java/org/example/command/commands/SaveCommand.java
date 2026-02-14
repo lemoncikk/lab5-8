@@ -28,7 +28,7 @@ public class SaveCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "";
+        return "Сохраняет коллекцию в XML файл";
     }
 
     @Override

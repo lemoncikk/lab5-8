@@ -1,11 +1,12 @@
 package org.example.command;
 
-public abstract class Flag {
+public class Flag {
     private final String shortName;
     private final String longName;
     private final String description;
+    private boolean on = false;
 
-    Flag(String name, String longName, String description) {
+    public Flag(String name, String longName, String description) {
         this.shortName = name;
         this.longName = longName;
         this.description = description;
@@ -21,5 +22,13 @@ public abstract class Flag {
 
     public String getLongName() {
         return longName;
+    }
+
+    public boolean isOn() {
+        return on;
+    }
+
+    public void setOn(boolean on) {
+        this.on = on;
     }
 }

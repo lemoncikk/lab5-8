@@ -1,6 +1,7 @@
 package org.example.model;
 
 import jakarta.xml.bind.annotation.*;
+import org.example.command.Command;
 import org.example.command.CommandRegistry;
 
 import java.io.File;

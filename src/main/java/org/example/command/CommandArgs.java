@@ -12,8 +12,9 @@ public class CommandArgs {
         fields.add(field);
         return this;
     }
-    public void addFlag(Flag flag) {
+    public CommandArgs addFlag(Flag flag) {
         flags.add(flag);
+        return this;
     }
 
     public ArrayList<Field<?>> getFields() {

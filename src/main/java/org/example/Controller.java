@@ -1,10 +1,7 @@
 package org.example;
 
 import org.example.command.*;
-import org.example.command.commands.AddCommand;
-import org.example.command.commands.ExitCommand;
-import org.example.command.commands.SaveCommand;
-import org.example.command.commands.ShowCommand;
+import org.example.command.commands.*;
 import org.example.command.exceptions.CommandExecutionException;
 import org.example.model.Context;
 
@@ -17,6 +14,7 @@ public class Controller {
         ctx.registry.registry(new AddCommand());
         ctx.registry.registry(new ShowCommand());
         ctx.registry.registry(new SaveCommand());
+        ctx.registry.registry(new HelpCommand());
     }
 
     public CommandResult handle(String commandName, CommandArgs args) throws CommandExecutionException {
