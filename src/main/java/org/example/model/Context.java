@@ -1,6 +1,7 @@
 package org.example.model;
 
 import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.example.command.Command;
 import org.example.command.CommandRegistry;
 
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -20,6 +22,11 @@ public class Context {
     public final CommandRegistry registry = new CommandRegistry();
     @XmlTransient
     private String[] args = null;
+    @XmlElement(name="InitDate")
+    @XmlJavaTypeAdapter(ZonedDateTimeAdapter.class)
+    private ZonedDateTime initDate = ZonedDateTime.now();
+
+    private boolean reverSortOrderF = false;
 
     public Context() {}
 
@@ -47,12 +54,23 @@ public class Context {
         store.removeIf(mb -> mb.getId() == id);
     }
 
-    public void insertAt(int id, MusicBand mb) {
-
+    public void insertAt(int index, MusicBand mb) {
+        store.add(index, mb);
     }
 
     public void sort(boolean reverse_order) {
-
+        Comparator<MusicBand> cmp = Comparator.comparingInt(MusicBand::getId);
+        if (reverse_order) {
+            if (reverSortOrderF) {
+                store.sort(cmp);
+                reverSortOrderF = false;
+                return;
+            }
+            store.sort(cmp.reversed());
+            reverSortOrderF = true;
+            return;
+        }
+        store.sort(cmp);
     }
 
     public void update(int id, MusicBand mb) {
@@ -96,5 +114,17 @@ public class Context {
 
     public void setArgs(String[] args) {
         this.args = args;
+    }
+
+    public void clear() {
+        store = new Stack<>();
+    }
+
+    public ZonedDateTime getInitDate() {
+        return initDate;
+    }
+
+    public void setInitDate(ZonedDateTime initDate) {
+        this.initDate = initDate;
     }
 }

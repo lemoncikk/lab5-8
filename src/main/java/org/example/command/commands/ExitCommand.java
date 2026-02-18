@@ -23,7 +23,7 @@ public class ExitCommand implements Command {
             }
             if (ctx.getArgs().length > 0) {
                 try {
-                    ctx.saveToFile(path);
+                    ctx.saveToFile(ctx.getArgs()[0]);
                     return new CommandResult("Bye", null, true);
                 } catch (Exception e) {
                     throw new CommandExecutionException(e.getMessage());
