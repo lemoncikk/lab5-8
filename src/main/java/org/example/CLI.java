@@ -35,6 +35,15 @@ public class CLI {
         while(!stopFlag) {
             var br = new BufferedReader(new InputStreamReader(System.in));
             Parser.ParseResult parseRes = Parser.parse(br.readLine());
+            if (parseRes.getCommandName().equals("execute_script")) {
+                try {
+                    var executor = new ScriptExecutor(parseRes.args.get(0), ctrl);
+                    stopFlag = executor.exec();
+                } catch (Exception e) {
+                    System.out.println(String.format("Произошла ошибка: %s", e.getMessage()));
+                }
+                continue;
+            }
             try {
                 CommandArgs model = ctrl.getCommandModel(parseRes.getCommandName());
                 if (model != null && checkArgs(model, parseRes, br)) {
