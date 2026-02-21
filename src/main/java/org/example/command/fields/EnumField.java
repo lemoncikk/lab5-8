@@ -23,6 +23,7 @@ public class EnumField<T extends Enum<T>> extends Field<T> {
 
     @Override
     protected T validate(String rawString) throws ValidationException {
+        if (rawString == null || rawString.isEmpty()) return null;
         try {
             String norm = rawString.trim().toUpperCase();
             return Enum.valueOf(getType(), norm);

@@ -22,6 +22,7 @@ public class DateField extends Field<ZonedDateTime> {
 
     @Override
     protected ZonedDateTime validate(String rawString) throws ValidationException {
+        if (rawString == null || rawString.isEmpty()) return null;
         try {
             LocalDate date = LocalDate.parse(rawString.trim(), DateTimeFormatter.ISO_LOCAL_DATE);
             return date.atStartOfDay(ZoneId.systemDefault());

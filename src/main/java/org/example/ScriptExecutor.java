@@ -63,6 +63,7 @@ public class ScriptExecutor {
                 stopFlag = res.stopFlag();
                 lineCounter++;
             }
+            file.close();
         } catch (Exception e) {
             System.out.println(String.format("Произошла ошибка:\nСтрока: %d\nОшибка: %s", lineCounter, e.getMessage()));
         }

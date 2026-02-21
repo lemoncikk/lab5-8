@@ -13,6 +13,7 @@ public class LongField extends Field<Long> {
 
     @Override
     protected Long validate(String rawString) throws ValidationException {
+        if (rawString == null || rawString.isEmpty()) return null;
         try {
             return Long.parseLong(rawString);
         }catch (NumberFormatException _) {

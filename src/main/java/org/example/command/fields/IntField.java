@@ -12,6 +12,7 @@ public class IntField extends Field<Integer> {
 
     @Override
     protected Integer validate(String rawString) throws ValidationException {
+        if (rawString == null || rawString.isEmpty()) return null;
         try {
             return Integer.parseInt(rawString);
         }catch (NumberFormatException _) {

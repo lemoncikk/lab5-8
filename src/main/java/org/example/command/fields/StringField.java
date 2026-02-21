@@ -16,6 +16,7 @@ public class StringField extends Field<String> {
 
     @Override
     protected String validate(String rawString) throws ValidationException {
+        if (rawString == null || rawString.isEmpty()) return null;
         return rawString;
     }
 }

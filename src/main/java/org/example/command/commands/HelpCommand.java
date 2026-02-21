@@ -23,7 +23,7 @@ public class HelpCommand implements Command {
             }
         } else {
             if (!ctx.registry.containsCommand(cmdName)) {
-                throw new CommandExecutionException("Command not found");
+                throw new CommandExecutionException("Такой команды нет");
             }
             Command cmd = ctx.registry.get(cmdName);
             msg.append(String.format(

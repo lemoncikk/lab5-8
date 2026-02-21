@@ -32,21 +32,21 @@
         <jaxb.runtime.version>4.0.5</jaxb.runtime.version>
     </properties>
     <dependencies>
-    <!-- 1. API (обязательно для компиляции) -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
             <version>${jakarta.bind.version}</version>
         </dependency>
-
-    <!-- 2. Реализация (выберите ОДНУ) -->
-
-    <!-- Вариант A: Официальная реализация GlassFish (рекомендуется) -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>${jaxb.runtime.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.165</version>
         </dependency>
     </dependencies>
 </project>

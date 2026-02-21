@@ -12,20 +12,7 @@ public class Controller {
 
     public Controller(Context ctx) {
         this.ctx = ctx;
-        ctx.registry.registry(new ExitCommand());
-        ctx.registry.registry(new AddCommand());
-        ctx.registry.registry(new ShowCommand());
-        ctx.registry.registry(new SaveCommand());
-        ctx.registry.registry(new HelpCommand());
-        ctx.registry.registry(new InfoCommand());
-        ctx.registry.registry(new ClearCommand());
-        ctx.registry.registry(new InsertCommand());
-        ctx.registry.registry(new CountCommand());
-        ctx.registry.registry(new FilterCommand());
-        ctx.registry.registry(new RemoveCommand());
-        ctx.registry.registry(new ReorderCommand());
-        ctx.registry.registry(new SumCommand());
-        ctx.registry.registry(new UpdateCommand());
+        CommandLoader.load(this.ctx.registry, "org.example.command.commands");
     }
 
     public CommandResult handle(String commandName, CommandArgs args) throws CommandExecutionException {

@@ -4,9 +4,16 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.example.command.exceptions.CommandExecutionException;
 
 import java.time.ZonedDateTime;
 
+/**
+ * Класс-представление музыкальной группы
+ * Все сеттеры - package-private
+ * <b>Не пытайтесь сконструировать объект данного класса, используйте MusicBandBuilder для инициализации, редактирования и конструирования</b>
+ * @see MusicBandBuilder
+ */
 @XmlRootElement(name = "MusicBand")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MusicBand {
@@ -30,7 +37,11 @@ public class MusicBand {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     * <b>ДАННЫЙ МЕТОД НЕОБХОДИМ ТОЛЬКО ДЛЯ ДЕСЕРИАЛИЗАЦИИ, НЕ ИСПОЛЬЗУЙТЕ ЕГОВ КОДЕ</b>
+     * @param id - уникальный id поля
+     */
+    void setId(int id) {
         this.id = id;
     }
 
@@ -39,6 +50,8 @@ public class MusicBand {
     }
 
     void setName(String name) {
+        if (name == null || name.isEmpty())
+            throw new CommandExecutionException("Expected not null value, but founded null");
         this.name = name;
     }
 
@@ -47,6 +60,8 @@ public class MusicBand {
     }
 
     void setCoordinates(Coordinates coordinates) {
+        if (coordinates == null)
+            throw new CommandExecutionException("Expected not null value, but founded null");
         this.coordinates = coordinates;
     }
 
@@ -55,6 +70,8 @@ public class MusicBand {
     }
 
     void setCreationDate(ZonedDateTime creationDate) {
+        if (creationDate == null)
+            throw new CommandExecutionException("Expected not null value, but founded null");
         this.creationDate = creationDate;
     }
 
@@ -63,6 +80,8 @@ public class MusicBand {
     }
 
     void setNumberOfParticipants(long numberOfParticipants) {
+        if (numberOfParticipants < 1)
+            throw new CommandExecutionException("Expected value greater than 1");
         this.numberOfParticipants = numberOfParticipants;
     }
 
@@ -71,6 +90,8 @@ public class MusicBand {
     }
 
     void setSinglesCount(long singlesCount) {
+        if (singlesCount < 1)
+            throw new CommandExecutionException("Expected value greater than 1");
         this.singlesCount = singlesCount;
     }
 
@@ -79,6 +100,8 @@ public class MusicBand {
     }
 
     void setAlbumsCount(Integer albumsCount) {
+        if (albumsCount < 1)
+            throw new CommandExecutionException("Expected value greater than 1");
         this.albumsCount = albumsCount;
     }
 
