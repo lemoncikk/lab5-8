@@ -8,17 +8,16 @@ import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        var client = new CLI();
-        Context ctx = null;
+        Context ctx;
         try {
             ctx = Context.loadFromFile(Arrays.stream(args).findFirst().get());
             ctx.setArgs(args);
         }catch (Exception e) {
-            System.out.println("Не удалось загрузить коллекцию из файла: " + e.getMessage());
+            System.out.println("Не удалось загрузить коллекцию из файла. Проверьте существует ли файл и есть ли у пользователя права на его чтение");
             ctx = new Context();
         }
-
         var ctrl = new Controller(ctx);
-        client.exec(ctrl);
+        var client = new CLI(ctrl);
+        client.exec();
     }
 }
