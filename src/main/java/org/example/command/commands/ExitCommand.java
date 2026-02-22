@@ -11,8 +11,8 @@ import org.example.model.Context;
 public class ExitCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        if(args.getFlags().getFirst().isOn()) {
-            String path = ((StringField)(args.getFields().getFirst())).getValue();
+        if(args.getFlags().get(0).isOn()) {
+            String path = ((StringField)(args.getFields().get(0))).getValue();
             if (path != null) {
                 try {
                     ctx.saveToFile(path);

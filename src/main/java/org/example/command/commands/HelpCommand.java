@@ -12,7 +12,7 @@ public class HelpCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
         StringBuilder msg = new StringBuilder();
-        String cmdName = ((StringField)(args.getFields().getFirst())).getValue();
+        String cmdName = ((StringField)(args.getFields().get(0))).getValue();
         if (cmdName == null) {
             for (var entry : ctx.registry) {
                 msg.append(String.format(

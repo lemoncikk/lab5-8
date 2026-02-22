@@ -32,7 +32,10 @@ public class Parser {
 
     public static ParseResult parse(String s) {
         var tokens = tokinize(s);
-        var res = new ParseResult(tokens.getFirst());
+        if (tokens.isEmpty()) {
+            //Что-то надо делать ?
+        }
+        var res = new ParseResult(tokens.get(0));
         for (int i = 1; i<tokens.size(); i++) {
             var token = tokens.get(i);
             if (token.startsWith("--")) {
@@ -54,6 +57,7 @@ public class Parser {
         ArrayList<String> tokens = new ArrayList<>();
         StringBuilder current = new StringBuilder();
         boolean inQuotes = false;
+        if(s == null) return tokens;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
 

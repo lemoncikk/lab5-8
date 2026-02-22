@@ -1,13 +1,9 @@
 package org.example;
 
 import io.github.classgraph.ClassGraph;
-import io.github.classgraph.ClassInfo;
 import io.github.classgraph.ScanResult;
 import org.example.command.Command;
 import org.example.command.CommandRegistry;
-
-import java.lang.reflect.Constructor;
-import java.util.List;
 
 public class CommandLoader {
     static void load(CommandRegistry cr, String path) {

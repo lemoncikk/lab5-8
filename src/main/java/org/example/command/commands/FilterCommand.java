@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class FilterCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        String s = (String)(args.getFields().getFirst().getValue());
+        String s = (String)(args.getFields().get(0).getValue());
         ArrayList<MusicBand> m = ctx.getStore().stream().filter(
                 e -> e.getName().startsWith(s)).collect(Collectors.toCollection(ArrayList::new));
         return new CommandResult("Были найдены совпадения:", m, false);

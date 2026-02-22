@@ -15,7 +15,7 @@ public class IntField extends Field<Integer> {
         if (rawString == null || rawString.isEmpty()) return null;
         try {
             return Integer.parseInt(rawString);
-        }catch (NumberFormatException _) {
+        }catch (NumberFormatException e) {
             throw new ValidationException(String.format("Field '%s' must be integer, got: '%s'", getName(), rawString));
         }
     }

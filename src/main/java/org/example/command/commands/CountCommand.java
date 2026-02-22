@@ -10,7 +10,7 @@ import org.example.model.Context;
 public class CountCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        int i = (int)(args.getFields().getFirst().getValue());
+        int i = (int)(args.getFields().get(0).getValue());
 
         var count = ctx.getStore().stream().filter(e -> e.getGenre().getId() > i).count();
         return new CommandResult(String.format("%d", count), null, false);

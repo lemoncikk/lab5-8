@@ -33,7 +33,7 @@ public abstract class Field<T> {
 
     public boolean isValid(String rawString) {
         try {
-            var _ = validate(rawString);
+            var e = validate(rawString);
         } catch (ValidationException e) {
             return false;
         }

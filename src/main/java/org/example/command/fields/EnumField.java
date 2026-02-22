@@ -27,7 +27,7 @@ public class EnumField<T extends Enum<T>> extends Field<T> {
         try {
             String norm = rawString.trim().toUpperCase();
             return Enum.valueOf(getType(), norm);
-        } catch (IllegalArgumentException _) {
+        } catch (IllegalArgumentException e) {
             throw new ValidationException(
                     String.format("Invalid value %s for field '%s'. Allowed values: %s",
                             rawString, getName(), formatAllowedValues()));

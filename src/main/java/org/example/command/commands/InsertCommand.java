@@ -15,7 +15,7 @@ public class InsertCommand implements Command {
     public CommandResult execute(Context ctx, CommandArgs args) {
         var fields = args.getFields();
         var mb = new MusicBandBuilder(new ArrayList<>(fields.subList(1, fields.size()))).build();
-        ctx.insertAt((int)(fields.getFirst().getValue()), mb);
+        ctx.insertAt((int)(fields.get(0).getValue()), mb);
         return new CommandResult("Объект успешно добавлен", null, false);
     }
 

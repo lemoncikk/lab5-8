@@ -10,7 +10,7 @@ import org.example.model.Context;
 public class RemoveCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        ctx.removeById((int)(args.getFields().getFirst().getValue()));
+        ctx.removeById((int)(args.getFields().get(0).getValue()));
         return new CommandResult("Объект успешно удалён", null, false);
     }
 

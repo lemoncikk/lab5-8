@@ -16,7 +16,7 @@ public class LongField extends Field<Long> {
         if (rawString == null || rawString.isEmpty()) return null;
         try {
             return Long.parseLong(rawString);
-        }catch (NumberFormatException _) {
+        }catch (NumberFormatException e) {
             throw new ValidationException(String.format("Field '%s' must be integer, got: '%s'", getName(), rawString));
         }
     }

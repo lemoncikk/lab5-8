@@ -31,10 +31,12 @@ public class CLI {
     public void exec(Controller ctrl) throws IOException {
         System.out.println("Start!");
         boolean stopFlag = false;
+        var br = new BufferedReader(new InputStreamReader(System.in));
         outerLoop:
         while(!stopFlag) {
-            var br = new BufferedReader(new InputStreamReader(System.in));
-            Parser.ParseResult parseRes = Parser.parse(br.readLine());
+            var line = br.readLine();
+            if (line == null) break;
+            Parser.ParseResult parseRes = Parser.parse(line);
             if (parseRes.getCommandName().equals("execute_script")) {
                 try {
                     var executor = new ScriptExecutor(parseRes.args.get(0), ctrl);
@@ -96,7 +98,7 @@ public class CLI {
                 System.out.println(s);
             }
             String input = br.readLine();
-            if (input.trim().equals("exit")) {
+            if (input == null || input.trim().equals("exit")) {
                 System.out.println("Выполнение команды прервано.");
                 return true;
             }

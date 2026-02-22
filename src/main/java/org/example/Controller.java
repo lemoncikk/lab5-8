@@ -36,7 +36,6 @@ public class Controller {
             return null;
         }
         if (!ctx.registry.containsCommand(commandName)) {
-            System.out.println(commandName);
             throw new CommandExecutionException("Такой команды нет");
         }
         return ctx.registry.get(commandName).getModel();

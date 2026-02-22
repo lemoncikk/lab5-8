@@ -7,14 +7,14 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public class Main {
-    static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         var client = new CLI();
         Context ctx = null;
         try {
             ctx = Context.loadFromFile(Arrays.stream(args).findFirst().get());
             ctx.setArgs(args);
         }catch (Exception e) {
-            System.out.println("Не удалось загрузить коллекцию из файла");
+            System.out.println("Не удалось загрузить коллекцию из файла: " + e.getMessage());
             ctx = new Context();
         }
 

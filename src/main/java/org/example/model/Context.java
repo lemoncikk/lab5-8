@@ -4,11 +4,10 @@ import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.example.command.Command;
 import org.example.command.CommandRegistry;
+import org.example.command.exceptions.CommandExecutionException;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.io.*;
+import java.nio.file.AccessDeniedException;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.IntStream;
@@ -85,27 +84,38 @@ public class Context {
         } else add(mb);
     }
 
-    public void saveToFile(String path) throws Exception {
-        jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
-        jakarta.xml.bind.Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(jakarta.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        StringWriter s = new StringWriter();
-        marshaller.marshal(this, s);
-        var fw = new FileWriter(path);
-        fw.write(s.toString());
-        fw.flush();
-        fw.close();
+    public void saveToFile(String path) throws CommandExecutionException {
+        try {
+            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
+            jakarta.xml.bind.Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(jakarta.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            StringWriter s = new StringWriter();
+            marshaller.marshal(this, s);
+            var fw = new FileWriter(path);
+            fw.write(s.toString());
+            fw.flush();
+            fw.close();
+        }
+        catch (Exception e) {
+            throw new CommandExecutionException(e.getMessage());
+        }
+
     }
 
     public static Context loadFromFile(String path) throws Exception {
-        var sc = new Scanner(new File(path));
-        sc.useDelimiter("\\A");
-        String xmlContent = sc.hasNext() ? sc.next() : "";
-        sc.close();
+        try {
+            var sc = new Scanner(new File(path));
+            sc.useDelimiter("\\A");
+            String xmlContent = sc.hasNext() ? sc.next() : "";
+            sc.close();
 
-        jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
-        jakarta.xml.bind.Unmarshaller unmarshaller = context.createUnmarshaller();
-        return (Context) unmarshaller.unmarshal(new StringReader(xmlContent));
+            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
+            jakarta.xml.bind.Unmarshaller unmarshaller = context.createUnmarshaller();
+            return (Context) unmarshaller.unmarshal(new StringReader(xmlContent));
+        } catch (Exception e) {
+            throw new CommandExecutionException(e.getMessage());
+        }
+
     }
 
     public String[] getArgs() {

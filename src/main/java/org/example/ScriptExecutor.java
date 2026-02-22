@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 public class ScriptExecutor {
 
-    BufferedReader file;
-    Controller ctrl;
+    private final BufferedReader file;
+    private final Controller ctrl;
 
     public ScriptExecutor(String path, Controller ctrl) throws FileNotFoundException {
         file = new BufferedReader(new FileReader(path));
@@ -22,37 +22,52 @@ public class ScriptExecutor {
     public boolean exec() {
         int lineCounter = 1;
         boolean stopFlag = false;
+        String line;
+
         try {
-            var s = file.readAllLines();
-            for (var line : s) {
+            while ((line = file.readLine()) != null) {
                 Parser.ParseResult parseRes = Parser.parse(line);
                 CommandArgs model = ctrl.getCommandModel(parseRes.getCommandName());
+
                 if (model != null) {
                     var fields = model.getFields();
                     var args = parseRes.args;
-                    for (int i = 0;i<fields.size(); i++) {
+
+                    for (int i = 0; i < fields.size(); i++) {
                         var field = fields.get(i);
-                        if(i<args.size()) {
+
+                        if (i < args.size()) {
                             var arg = args.get(i);
                             if (field.isValid(arg)) {
-                                field.setRawValue(args.get(i));
+                                field.setRawValue(arg);
                                 continue;
                             }
-                            throw new CommandExecutionException(String.format("%s <-- Обнаружен невалидный аргумент", line));
+                            throw new CommandExecutionException(
+                                    String.format("%s <-- Обнаружен невалидный аргумент", line));
                         }
-                        if(!field.isRequired()) {
+
+                        if (!field.isRequired()) {
                             continue;
                         }
+
                         String input = file.readLine();
+                        if (input == null) {
+                            throw new CommandExecutionException(
+                                    "Неожиданный конец файла при чтении аргумента");
+                        }
+
                         if (field.isValid(input)) {
                             field.setRawValue(input);
                             continue;
                         }
-                        throw new CommandExecutionException(String.format("%s <-- Обнаружен невалидный аргумент", line));
+                        throw new CommandExecutionException(
+                                String.format("%s <-- Обнаружен невалидный аргумент", line));
                     }
                 }
+
                 var res = ctrl.handle(parseRes.getCommandName(), model);
                 System.out.println(res.msg());
+
                 if (res.data() != null) {
                     System.out.println(
                             res.data().stream()
@@ -60,12 +75,24 @@ public class ScriptExecutor {
                                     .collect(Collectors.joining("\n"))
                     );
                 }
+
                 stopFlag = res.stopFlag();
                 lineCounter++;
             }
-            file.close();
-        } catch (Exception e) {
-            System.out.println(String.format("Произошла ошибка:\nСтрока: %d\nОшибка: %s", lineCounter, e.getMessage()));
+        } catch (CommandExecutionException e) {
+            System.out.println(String.format(
+                    "Произошла ошибка:\nСтрока: %d\nОшибка: %s",
+                    lineCounter, e.getMessage()));
+        } catch (IOException e) {
+            System.out.println(String.format(
+                    "Ошибка ввода-вывода:\nСтрока: %d\nОшибка: %s",
+                    lineCounter, e.getMessage()));
+        } finally {
+            try {
+                if (file != null) file.close();
+            } catch (IOException e) {
+                System.err.println("Не удалось закрыть файл: " + e.getMessage());
+            }
         }
         return stopFlag;
     }
