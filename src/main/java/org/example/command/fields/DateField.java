@@ -16,7 +16,7 @@ public class DateField extends Field<ZonedDateTime> {
     public DateField(String name, String description, boolean required) {
         super(name, description, required, null, ZonedDateTime.class);
     }
-    public String formatDataTimeFormat() {
+    public String formatAllowedValues() {
         return "YYYY-MM-DD, например 2006-06-17";
     }
 
@@ -29,7 +29,7 @@ public class DateField extends Field<ZonedDateTime> {
         }catch (DateTimeParseException e) {
             throw new ValidationException(
                     String.format("Field '%s' must be in format %s, got: '%s'",
-                            formatDataTimeFormat(), getName(), rawString));
+                            formatAllowedValues(), getName(), rawString));
         }
 
     }

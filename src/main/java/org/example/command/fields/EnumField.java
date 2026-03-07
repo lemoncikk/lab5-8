@@ -1,8 +1,11 @@
 package org.example.command.fields;
 
 import org.example.command.exceptions.ValidationException;
+import org.example.model.enumUtils.EnumUtils;
+import org.example.model.enumUtils.LabelledEnum;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class EnumField<T extends Enum<T>> extends Field<T> {
@@ -15,9 +18,14 @@ public class EnumField<T extends Enum<T>> extends Field<T> {
     }
 
     public String formatAllowedValues() {
-        return Arrays.stream(getType().getEnumConstants()).toList().stream()
-                .map(Enum::name)
-                .map(String::toLowerCase)
+        return Arrays.stream(getType().getEnumConstants())
+                .map(enumConst -> {
+                    String name = enumConst.name().toLowerCase();
+                    if (enumConst instanceof LabelledEnum labelled) {
+                        return String.format("%s (или \"%s\")", name, labelled.getLabel());
+                    }
+                    return name;
+                })
                 .collect(Collectors.joining(", "));
     }
 
@@ -28,9 +36,17 @@ public class EnumField<T extends Enum<T>> extends Field<T> {
             String norm = rawString.trim().toUpperCase();
             return Enum.valueOf(getType(), norm);
         } catch (IllegalArgumentException e) {
-            throw new ValidationException(
-                    String.format("Invalid value %s for field '%s'. Allowed values: %s",
-                            rawString, getName(), formatAllowedValues()));
+
         }
+        if (LabelledEnum.class.isAssignableFrom(getType())) {
+            Optional<LabelledEnum> byLabel = EnumUtils.fromLabel(getType(), rawString.trim());
+            if (byLabel.isPresent()) {
+                return (T) byLabel.get();
+            }
+        }
+
+        throw new ValidationException(
+                String.format("Invalid value %s for field '%s'. Allowed values: %s",
+                        rawString, getName(), formatAllowedValues()));
     }
 }

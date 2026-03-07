@@ -20,4 +20,8 @@ public class LongField extends Field<Long> {
             throw new ValidationException(String.format("Field '%s' must be integer, got: '%s'", getName(), rawString));
         }
     }
+    @Override
+    public String formatAllowedValues() {
+        return "1";
+    }
 }

@@ -1,10 +1,11 @@
 package org.example;
 
+import com.williamcallahan.tui4j.compat.bubbletea.Program;
 import org.example.model.Context;
+import org.example.tui.view.BandList;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,6 +18,12 @@ public class Main {
             ctx = new Context();
         }
         var ctrl = new Controller(ctx);
+        if (args.length >= 2 && args[1].trim().equalsIgnoreCase("tui")) {
+            BandList model = new BandList(ctrl);
+            Program program = new Program(model);
+            program.run();
+            return;
+        }
         var client = new CLI(ctrl);
         client.exec();
     }

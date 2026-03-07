@@ -7,6 +7,8 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.example.command.exceptions.CommandExecutionException;
 
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  * Класс-представление музыкальной группы
@@ -39,7 +41,7 @@ public class MusicBand {
 
     /**
      * <b>ДАННЫЙ МЕТОД НЕОБХОДИМ ТОЛЬКО ДЛЯ ДЕСЕРИАЛИЗАЦИИ, НЕ ИСПОЛЬЗУЙТЕ ЕГОВ КОДЕ</b>
-     * @param id - уникальный id поля
+     * @param id  уникальный id поля
      */
     void setId(int id) {
         this.id = id;
@@ -119,6 +121,22 @@ public class MusicBand {
 
     void setBestAlbum(Album bestAlbum) {
         this.bestAlbum = bestAlbum;
+    }
+
+    public ArrayList<String> getFieldsStrings() {
+        var list = new ArrayList<String>();
+        list.add(String.valueOf(id));
+        list.add(name);
+        list.add(String.valueOf(coordinates.getX()));
+        list.add(String.valueOf(coordinates.getY()));
+        list.add(creationDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
+        list.add(String.valueOf(numberOfParticipants));
+        list.add(String.valueOf(singlesCount));
+        list.add(String.valueOf(albumsCount));
+        list.add(genre.toString());
+        list.add(bestAlbum.getName());
+        list.add(String.valueOf(bestAlbum.getTracks()));
+        return list;
     }
 
     @Override

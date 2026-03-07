@@ -59,4 +59,6 @@ public abstract class Field<T> {
     public Class<T> getType() {
         return type;
     }
+
+    public abstract String formatAllowedValues();
 }

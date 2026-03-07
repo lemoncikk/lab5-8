@@ -19,4 +19,8 @@ public class StringField extends Field<String> {
         if (rawString == null || rawString.isEmpty()) return null;
         return rawString;
     }
+    @Override
+    public String formatAllowedValues() {
+        return "Пу пу пу";
+    }
 }

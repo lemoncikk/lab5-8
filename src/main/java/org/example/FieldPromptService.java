@@ -46,7 +46,7 @@ public class FieldPromptService {
         if (field instanceof DateField dateField) {
             System.out.println(String.format(
                     "Введите дату\nФормат: %s",
-                    dateField.formatDataTimeFormat()));
+                    dateField.formatAllowedValues()));
             return;
         }
         System.out.println(String.format(

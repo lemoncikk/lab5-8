@@ -38,11 +38,21 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots />
+      <id>sonatype-snapshots</id>
+      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+    </repository>
+  </repositories>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jaxb.runtime.version>4.0.5</jaxb.runtime.version>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.target>25</maven.compiler.target>
     <jakarta.bind.version>4.0.2</jakarta.bind.version>
-    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.source>25</maven.compiler.source>
   </properties>
 </project>

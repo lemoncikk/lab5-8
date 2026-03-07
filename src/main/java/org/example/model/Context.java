@@ -71,6 +71,9 @@ public class Context {
         }
         store.sort(cmp);
     }
+    public void sort() {
+        sort(false);
+    }
 
     public void update(int id, MusicBand mb) {
         int stackIndex = IntStream.range(0, store.size())
@@ -82,6 +85,7 @@ public class Context {
             store.remove(stackIndex);
             store.add(mb);
         } else add(mb);
+        sort();
     }
 
     public void saveToFile(String path) throws CommandExecutionException {

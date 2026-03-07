@@ -2,9 +2,10 @@ package org.example.model;
 
 import jakarta.xml.bind.annotation.XmlEnum;
 import jakarta.xml.bind.annotation.XmlEnumValue;
+import org.example.model.enumUtils.LabelledEnum;
 
 @XmlEnum
-public enum MusicGenre {
+public enum MusicGenre implements LabelledEnum {
     @XmlEnumValue("PSYCHEDELIC_ROCK") PSYCHEDELIC_ROCK("Психоделик рок", 1),
     @XmlEnumValue("HIP_HOP")          HIP_HOP("Хип-хоп", 2),
     @XmlEnumValue("BLUES")            BLUES("Блюз", 3);
@@ -24,5 +25,10 @@ public enum MusicGenre {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String getLabel() {
+        return label;
     }
 }
