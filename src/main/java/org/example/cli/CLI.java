@@ -1,9 +1,9 @@
-package org.example;
+package org.example.cli;
 
+import org.example.Controller;
+import org.example.ScriptExecutor;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
-import org.example.command.fields.DateField;
-import org.example.command.fields.EnumField;
 import org.example.command.exceptions.CommandExecutionException;
 import org.example.command.fields.Field;
 

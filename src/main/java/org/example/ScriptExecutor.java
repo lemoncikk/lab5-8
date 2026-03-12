@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.cli.Parser;
 import org.example.command.CommandArgs;
 import org.example.command.exceptions.CommandExecutionException;
 

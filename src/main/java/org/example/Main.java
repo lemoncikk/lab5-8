@@ -1,6 +1,7 @@
 package org.example;
 
 import com.williamcallahan.tui4j.compat.bubbletea.Program;
+import org.example.cli.CLI;
 import org.example.model.Context;
 import org.example.tui.view.BandList;
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.cli;
 
 import org.example.command.fields.DateField;
 import org.example.command.fields.EnumField;
