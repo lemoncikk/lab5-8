@@ -2,10 +2,17 @@ package org.example.model;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlTransient;
 import org.example.exceptions.CommandExecutionException;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Coordinates {
+public class Coordinates implements Serializable {
+    @XmlTransient
+    @Serial
+    private static final long serialVersionUID = 1L;
     private long x = 0;
     private Integer y = 0; //Поле не может быть null
 

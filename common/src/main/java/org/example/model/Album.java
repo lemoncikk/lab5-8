@@ -4,13 +4,15 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import org.example.exceptions.CommandExecutionException;
 
+import java.io.Serializable;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 /**
  * Класс альбома группы
  * Хранит <b>name</b>(название альбома) и <b>tracks</b>(кол-во треков)
  * @see MusicBand
  */
-public class Album {
+public class Album implements Serializable {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private long tracks; //Значение поля должно быть больше 0
 

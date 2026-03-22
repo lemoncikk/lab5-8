@@ -2,13 +2,18 @@ package org.example.command.fields;
 
 import org.example.exceptions.ValidationException;
 
+import java.awt.*;
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class DateField extends Field<ZonedDateTime> {
+public class DateField extends Field<ZonedDateTime> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     public DateField(String name, String description, boolean required, ZonedDateTime defaultValue) {
         super(name, description, required, defaultValue, ZonedDateTime.class);
     }

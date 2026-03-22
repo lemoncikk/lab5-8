@@ -5,6 +5,7 @@ import org.example.Controller;
 import org.example.ScriptExecutor;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
+import org.example.exceptions.AppException;
 import org.example.exceptions.CommandExecutionException;
 import org.example.command.fields.Field;
 import org.example.exceptions.DataAccessException;
@@ -16,9 +17,9 @@ import java.io.InputStreamReader;
 
 @Log4j2
 public class CLI {
-    private BufferedReader ui = new BufferedReader(new InputStreamReader(System.in));
-    private Controller ctrl;
-    private boolean stopflag = false;
+    private final BufferedReader ui = new BufferedReader(new InputStreamReader(System.in));
+    private final Controller ctrl;
+    private boolean stopFlag = false;
 
     public CLI(Controller ctrl) {
         this.ctrl = ctrl;
@@ -43,7 +44,7 @@ public class CLI {
 
             var result = ctrl.handle(res.getCommandName(), model);
             printResult(result);
-            stopflag = result.stopFlag();
+            stopFlag = result.stopFlag();
 
         } catch (CommandExecutionException e) {
             if (e.getCause() instanceof IOException || e.getCause() instanceof DataAccessException) {
@@ -51,7 +52,9 @@ public class CLI {
             } else {
                 log.warn("Command wasn't execute: ", e);
             }
-            stopflag = e.isStopFlag();
+            stopFlag = e.isStopFlag();
+            System.out.println(e.getMessage());
+        } catch (AppException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -90,6 +93,7 @@ public class CLI {
         if (res.data() != null) {
             for (var i : res.data()) {
                 System.out.println(i);
+                System.out.println("=====================");
             }
         }
     }
@@ -97,7 +101,7 @@ public class CLI {
     private void handleSpecialCommand(Parser.ParseResult res, Controller ctrl) {
         try {
             var executor = new ScriptExecutor(res.args.get(0), ctrl);
-            stopflag = executor.exec();
+            stopFlag = executor.exec();
         } catch (FileNotFoundException e) {
             log.warn("File not found: ", e);
             System.out.println("Файл не найден");
@@ -106,7 +110,7 @@ public class CLI {
 
     public void exec() throws IOException {
         System.out.println("Let's go");
-        while(!stopflag) {
+        while(!stopFlag) {
             var parseResult = readAndParseCommand();
             if (parseResult == null) break;
             if (isSpecialCommand(parseResult)) {

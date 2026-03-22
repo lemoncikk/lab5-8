@@ -2,7 +2,12 @@ package org.example.command.fields;
 
 import org.example.exceptions.ValidationException;
 
-public class StringField extends Field<String> {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class StringField extends Field<String> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     public StringField(String name, String description, boolean required, String defaultValue) {
         super(name, description, required, defaultValue, String.class);

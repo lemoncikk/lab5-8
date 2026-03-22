@@ -2,7 +2,12 @@ package org.example.command.fields;
 
 import org.example.exceptions.ValidationException;
 
-public class IntField extends Field<Integer> {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class IntField extends Field<Integer> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     public IntField(String name, String description, boolean required, Integer defaultValue) {
         super(name, description, required, defaultValue, Integer.class);
     }

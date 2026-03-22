@@ -2,7 +2,12 @@ package org.example.command.fields;
 
 import org.example.exceptions.ValidationException;
 
-public abstract class Field<T> {
+import java.io.Serial;
+import java.io.Serializable;
+
+public abstract class Field<T> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private final String name;
     private final String description;
     private final boolean required;

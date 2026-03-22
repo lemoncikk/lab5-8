@@ -3,6 +3,7 @@ package org.example;
 import com.williamcallahan.tui4j.compat.bubbletea.Program;
 import org.example.cli.CLI;
 import org.example.controllers.LocalController;
+import org.example.controllers.NetworkController;
 import org.example.model.Context;
 import org.example.tui.view.BandList;
 
@@ -20,13 +21,14 @@ public class Main {
             ctx = new Context();
         }
         var ctrl = new LocalController(ctx);
+        var ntCtrl = new NetworkController(2222, "localhost");
         if (args.length >= 2 && args[1].trim().equalsIgnoreCase("tui")) {
             BandList model = new BandList(ctrl);
             Program program = new Program(model);
             program.run();
             return;
         }
-        var client = new CLI(ctrl);
+        var client = new CLI(ntCtrl);
         client.exec();
     }
 }

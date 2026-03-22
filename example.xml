@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Context>
+    <MusicBand>
+        <id>1</id>
+        <name>s</name>
+        <coordinates>
+            <x>1</x>
+            <y>1</y>
+        </coordinates>
+        <creationDate>2006-06-17T00:00:00+04:00[Europe/Moscow]</creationDate>
+        <numberOfParticipants>1</numberOfParticipants>
+        <singlesCount>1</singlesCount>
+        <albumsCount>1</albumsCount>
+        <genre>BLUES</genre>
+        <bestAlbum>
+            <name>s</name>
+            <tracks>1</tracks>
+        </bestAlbum>
+    </MusicBand>
+    <MusicBand>
+        <id>2</id>
+        <name>Rammstain</name>
+        <coordinates>
+            <x>1</x>
+            <y>1</y>
+        </coordinates>
+        <creationDate>2006-06-17T00:00:00+04:00[Europe/Moscow]</creationDate>
+        <numberOfParticipants>3</numberOfParticipants>
+        <singlesCount>12</singlesCount>
+        <albumsCount>3</albumsCount>
+        <genre>PSYCHEDELIC_ROCK</genre>
+        <bestAlbum>
+            <name>Metallica</name>
+            <tracks>10</tracks>
+        </bestAlbum>
+    </MusicBand>
+    <MusicBand>
+        <id>3</id>
+        <name>Порез на собаке</name>
+        <coordinates>
+            <x>1</x>
+            <y>1</y>
+        </coordinates>
+        <creationDate>2015-06-17T00:00:00+03:00[Europe/Moscow]</creationDate>
+        <numberOfParticipants>2</numberOfParticipants>
+        <singlesCount>60</singlesCount>
+        <albumsCount>9</albumsCount>
+        <genre>HIP_HOP</genre>
+        <bestAlbum>
+            <name>Воспитание и такт</name>
+            <tracks>9</tracks>
+        </bestAlbum>
+    </MusicBand>
+    <InitDate>2026-02-16T16:33:52.7108994+03:00[Europe/Moscow]</InitDate>
+    <revertSortOrderFlag>false</revertSortOrderFlag>
+</Context>

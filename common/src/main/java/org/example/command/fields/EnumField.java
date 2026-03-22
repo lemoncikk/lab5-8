@@ -4,11 +4,15 @@ import org.example.exceptions.ValidationException;
 import org.example.model.enumUtils.EnumUtils;
 import org.example.model.enumUtils.LabelledEnum;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class EnumField<T extends Enum<T>> extends Field<T> {
+public class EnumField<T extends Enum<T>> extends Field<T> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     public EnumField(String name, String description, boolean required, T defaultValue, Class<T> type) {
         super(name, description, required, defaultValue, type);

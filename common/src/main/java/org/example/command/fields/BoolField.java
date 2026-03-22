@@ -2,7 +2,12 @@ package org.example.command.fields;
 
 import org.example.exceptions.ValidationException;
 
-public class BoolField extends Field<Boolean> {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class BoolField extends Field<Boolean> implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     protected BoolField(String name, String description, boolean required, Boolean defaultValue) {
         super(name, description, required, defaultValue, Boolean.class);
     }
