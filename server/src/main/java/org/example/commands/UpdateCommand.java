@@ -1,4 +1,4 @@
-package org.example.command.commands;
+package org.example.commands;
 
 import org.example.command.Command;
 import org.example.command.CommandArgs;
@@ -10,29 +10,24 @@ import org.example.model.MusicGenre;
 
 import java.util.ArrayList;
 
-public class InsertCommand implements Command {
+public class UpdateCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
         var fields = args.getFields();
         var mb = new MusicBandBuilder(new ArrayList<>(fields.subList(1, fields.size()))).build();
-        ctx.insertAt((int)(fields.get(0).getValue()), mb);
-        return new CommandResult("Объект успешно добавлен", null, false);
+        ctx.update((int)(fields.get(0).getValue()), mb);
+        return new CommandResult("Объект успешно обновлён", null, false);
     }
 
     @Override
     public String getDescription() {
-        return "Вставляет новый элемент в коллекцию по указанному индексу";
-    }
-
-    @Override
-    public String getName() {
-        return "insert_at";
+        return "Заменяет элемент коллекции с указанным ID на переданный объект";
     }
 
     @Override
     public CommandArgs getModel() {
         var prepare = new CommandArgs();
-        prepare.addField(new IntField("Индекс", "Порядковый номер элемента коллекции", true))
+        prepare.addField(new IntField("ID", "Уникальный номер записи", true))
                 .addField(new StringField("Название", "Название группы", true))
                 .addField(new LongField("X", "Координата x местоположения", true))
                 .addField(new IntField("Y", "Координата y местоположения", true))
@@ -43,6 +38,7 @@ public class InsertCommand implements Command {
                 .addField(new EnumField<>("Музыкальный жанр", "Музыкальный жанр в котором выступает группа", true, MusicGenre.class))
                 .addField(new StringField("Названия лучшего альбома", "Название лучшего альбома выпущенного группой", true))
                 .addField(new LongField("Количество треков", "Количество треков в лучшем альбоме", true));
+
         return prepare;
     }
 }

@@ -13,7 +13,7 @@ public class ServerController implements org.example.Controller {
 
     public ServerController(Context ctx) {
         this.ctx = ctx;
-        CommandLoader.load(this.ctx.registry, "org.example.command.commands");
+        CommandLoader.load(this.ctx.registry, "org.example.commands");
     }
 
     public CommandResult handle(String commandName, CommandArgs args) throws AppException {

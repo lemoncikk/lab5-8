@@ -15,8 +15,15 @@ public class Main {
             System.out.println("Не удалось загрузить коллекцию из файла. Проверьте существует ли файл и есть ли у пользователя права на его чтение");
             ctx = new Context();
         }
+        int port = 2222;
+        if (args.length >= 2) {
+            try {
+                var temp = Integer.parseInt(args[1]);
+                if (temp>1024) port = temp;
+            } catch (Exception e) {}
+        }
         var ctrl = new ServerController(ctx);
-        try (var server = new UdpServer(2222, ctrl)) {
+        try (var server = new UdpServer(port, ctrl)) {
             server.run();
         } catch (Exception e) {
             e.printStackTrace();

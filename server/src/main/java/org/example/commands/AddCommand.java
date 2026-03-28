@@ -1,4 +1,4 @@
-package org.example.command.commands;
+package org.example.commands;
 
 import org.example.command.Command;
 import org.example.command.CommandArgs;

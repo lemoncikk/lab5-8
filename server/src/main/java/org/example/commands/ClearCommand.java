@@ -1,20 +1,20 @@
-package org.example.command.commands;
+package org.example.commands;
 
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.model.Context;
 
-public class ReorderCommand implements Command {
+public class ClearCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        ctx.sort(true);
-        return new CommandResult("Коллекция была отсортирована в обратном порядке", null, false);
+        ctx.clear();
+        return new CommandResult("Всё было очищено", null, false);
     }
 
     @Override
     public String getDescription() {
-        return "Сортирует коллекцию в обратном текущему порядке";
+        return "Очищает коллекцию";
     }
 
     @Override

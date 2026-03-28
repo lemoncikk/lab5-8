@@ -1,20 +1,20 @@
-package org.example.command.commands;
+package org.example.commands;
 
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.model.Context;
 
-public class ClearCommand implements Command {
+public class ShowCommand implements Command {
+
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        ctx.clear();
-        return new CommandResult("Всё было очищено", null, false);
+        return new CommandResult("", ctx.getAll(), false);
     }
 
     @Override
     public String getDescription() {
-        return "Очищает коллекцию";
+        return "Выводит все элементы коллекции";
     }
 
     @Override
