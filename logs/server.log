@@ -1,1 +1,63 @@
 2026-04-17 22:35:29.352 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-17 22:35:51.687 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:35:51.697 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:35:51.710 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:13.502 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:13.506 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:13.511 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:13.515 [main] DEBUG org.example.UdpServer - Command remove_by_id is handled
+2026-04-17 22:36:13.517 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:16.475 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:16.478 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:17.357 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:17.358 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:36:17.359 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:26.617 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:26.618 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:33.284 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:33.284 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:36:33.285 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:34.510 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:34.511 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:35.003 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:35.004 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:36:35.004 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:36:35.847 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:36:35.848 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:38:01.550 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:38:01.552 [main] DEBUG org.example.UdpServer - Command add is handled
+2026-04-17 22:38:01.553 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:38:01.554 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:38:01.554 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:38:01.555 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:38:58.456 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
+2026-04-17 22:38:58.457 [main] WARN  org.example.UdpServer - Server error
+org.example.exceptions.CommandNotFoundException: Команда не найдена
+	at org.example.ServerController.getCommandModel(ServerController.java:47)
+	at org.example.UdpServer.handleModelRequest(UdpServer.java:110)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:57)
+	at org.example.UdpServer.handleKey(UdpServer.java:78)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-17 22:38:58.463 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
+2026-04-17 22:40:29.347 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
+2026-04-17 22:40:29.348 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:40:29.348 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
+2026-04-17 22:40:34.486 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
+2026-04-17 22:40:34.486 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
+2026-04-17 22:40:34.491 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
+2026-04-17 22:40:34.491 [main] DEBUG org.example.UdpServer - Command remove_by_id is handled
+2026-04-17 22:40:34.492 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
+2026-04-17 22:40:34.493 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
+2026-04-17 22:40:34.494 [main] DEBUG org.example.UdpServer - Command show is handled
+2026-04-17 22:40:34.495 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
+2026-04-17 22:40:38.192 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
+2026-04-17 22:40:38.193 [main] WARN  org.example.UdpServer - Server error
+org.example.exceptions.CommandNotFoundException: Команда не найдена
+	at org.example.ServerController.getCommandModel(ServerController.java:47)
+	at org.example.UdpServer.handleModelRequest(UdpServer.java:110)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:57)
+	at org.example.UdpServer.handleKey(UdpServer.java:78)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-17 22:40:38.194 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
