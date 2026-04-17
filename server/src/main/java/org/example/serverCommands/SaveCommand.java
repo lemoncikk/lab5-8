@@ -1,4 +1,4 @@
-package org.example.commands;
+package org.example.serverCommands;
 
 import org.example.command.Command;
 import org.example.command.CommandArgs;
@@ -10,7 +10,7 @@ import org.example.model.Context;
 public class SaveCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        String path = ((StringField)(args.getFields().get(0))).getValue();
+        String path = args == null ? null : ((StringField)(args.getFields().get(0))).getValue();
         if (path == null) {
             var ctx_args = ctx.getArgs();
             if (ctx.getArgs() == null || ctx.getArgs().length == 0) {

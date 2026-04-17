@@ -4,6 +4,7 @@ import com.williamcallahan.tui4j.compat.bubbletea.*;
 import com.williamcallahan.tui4j.compat.lipgloss.Style;
 import com.williamcallahan.tui4j.compat.lipgloss.color.Color;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.example.Controller;
 import org.example.model.MusicBand;
 import org.example.tui.DeleteBandMessage;
@@ -12,7 +13,7 @@ import org.example.tui.UpdateListMessage;
 
 import java.util.List;
 
-@Log4j2
+@Slf4j
 public class BandList implements Model {
     private final static Style SELECTION = Style.newStyle().foreground(Color.color("205"));
     private final static Style WRONG = Style.newStyle().foreground(Color.color("208"));

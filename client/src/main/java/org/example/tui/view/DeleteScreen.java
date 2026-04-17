@@ -9,6 +9,7 @@ import com.williamcallahan.tui4j.compat.lipgloss.color.Color;
 import com.williamcallahan.tui4j.compat.lipgloss.join.VerticalJoinDecorator;
 import org.example.model.MusicBand;
 import org.example.tui.DeleteBandMessage;
+import org.example.tui.UpdateListMessage;
 
 public class DeleteScreen implements Model {
     private final Style warningBoxStyle;
@@ -51,6 +52,7 @@ public class DeleteScreen implements Model {
 
     private Model quit() {
         previuseModel.update(new DeleteBandMessage(mb.getId()));
+        previuseModel.update(new UpdateListMessage());
         return previuseModel;
     }
 

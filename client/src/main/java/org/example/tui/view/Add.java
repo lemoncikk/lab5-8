@@ -5,6 +5,7 @@ import com.williamcallahan.tui4j.compat.bubbletea.*;
 import com.williamcallahan.tui4j.compat.lipgloss.Style;
 import com.williamcallahan.tui4j.compat.lipgloss.color.Color;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.example.Controller;
 import org.example.command.CommandArgs;
 import org.example.command.fields.Field;
@@ -13,7 +14,7 @@ import org.example.tui.UpdateListMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-@Log4j2
+@Slf4j
 public class Add implements Model {
     private final static Style SELECTION = Style.newStyle().foreground(Color.color("205"));
     private final static Style WRONG = Style.newStyle().foreground(Color.color("208"));

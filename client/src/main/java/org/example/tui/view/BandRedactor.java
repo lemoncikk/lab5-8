@@ -4,6 +4,7 @@ import com.williamcallahan.tui4j.compat.bubbletea.*;
 import com.williamcallahan.tui4j.compat.lipgloss.Style;
 import com.williamcallahan.tui4j.compat.lipgloss.color.Color;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.example.Controller;
 import org.example.command.CommandArgs;
 import org.example.exceptions.AppException;
@@ -12,7 +13,7 @@ import com.williamcallahan.tui4j.compat.bubbles.textarea.Textarea;
 import org.example.tui.UpdateListMessage;
 
 import java.util.ArrayList;
-@Log4j2
+@Slf4j
 public class BandRedactor implements Model {
     private final static Style SELECTION = Style.newStyle().foreground(Color.color("205"));
     private final static Style WRONG = Style.newStyle().foreground(Color.color("208"));
@@ -22,7 +23,7 @@ public class BandRedactor implements Model {
     private final MusicBand mb;
     private Textarea textArea;
     private final ArrayList<String> fieldsStrings;
-    private ArrayList<org.example.command.fields.Field<?>> fields;
+    private final ArrayList<org.example.command.fields.Field<?>> fields;
     private int cursor;
     private boolean EditMod = false;
     private boolean wrongField = false;
@@ -89,7 +90,7 @@ public class BandRedactor implements Model {
             }
             ctrl.handle(UPDATE_COMMAND, args);
         } catch (AppException e) {
-            log.error(e);
+            log.error("Ошибка", e);
             error = true;
             errorMsg = e.getMessage();
         }

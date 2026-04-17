@@ -26,6 +26,23 @@ public class JavaSerializableCodec<T> implements UdpCodec<T> {
     public T decode(byte[] data) throws IOException, ClassNotFoundException {
         try (ByteArrayInputStream bios = new ByteArrayInputStream(data);
         ObjectInputStream ois = new ObjectInputStream(bios)) {
+//            var filter = String.join(";",
+//                    "org.example.**",
+//                    "java.lang.String",
+//                    "java.lang.Integer", "java.lang.Long", "java.lang.Double",
+//                    "java.lang.Boolean", "java.lang.Enum",
+//
+//                    "java.util.ArrayList", "java.util.LinkedList",
+//                    "java.util.HashMap", "java.util.HashSet",
+//                    "java.util.Collections*", "java.util.Arrays*",
+//
+//                    "java.time.*",
+//
+//                    "[L" + getClass() + ";",
+//                    "!*"
+//            );
+//
+//            ois.setObjectInputFilter(ObjectInputFilter.Config.createFilter(filter));
             Object obj = ois.readObject();
             if (!(type.isInstance(obj))) {
                 throw new ClassCastException("Expected %s, but got %s".formatted(

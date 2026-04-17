@@ -1,0 +1,103 @@
+2026-04-04 13:20:33.469 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 13:35:19.118 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 13:35:23.234 [main] ERROR org.example.UdpServer - Exception while closing
+org.example.exceptions.CommandNotFoundException: Команда не найдена
+	at org.example.ServerController.handle(ServerController.java:32)
+	at org.example.UdpServer.close(UdpServer.java:111)
+	at org.example.Main.main(Main.java:30)
+2026-04-04 13:35:23.236 [main] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:35:23.236 [shutdown-hook] ERROR org.example.UdpServer - Exception while closing
+org.example.exceptions.CommandNotFoundException: Команда не найдена
+	at org.example.ServerController.handle(ServerController.java:32)
+	at org.example.UdpServer.close(UdpServer.java:111)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-04-04 13:35:23.236 [main] ERROR org.example.Main - Critical error
+java.nio.channels.ClosedSelectorException
+	at java.base/sun.nio.ch.SelectorImpl.ensureOpen(SelectorImpl.java:81)
+	at java.base/sun.nio.ch.SelectorImpl.selectedKeys(SelectorImpl.java:92)
+	at org.example.UdpServer.run(UdpServer.java:43)
+	at org.example.Main.main(Main.java:32)
+2026-04-04 13:35:23.239 [shutdown-hook] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:37:36.600 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 13:37:37.592 [shutdown-hook] ERROR org.example.UdpServer - Exception while closing
+java.lang.NullPointerException: Cannot invoke "org.example.command.CommandArgs.getFields()" because "args" is null
+	at org.example.serverCommands.SaveCommand.execute(SaveCommand.java:13)
+	at org.example.ServerController.specialHandle(ServerController.java:39)
+	at org.example.UdpServer.close(UdpServer.java:111)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-04-04 13:37:37.591 [main] ERROR org.example.UdpServer - Exception while closing
+java.lang.NullPointerException: Cannot invoke "org.example.command.CommandArgs.getFields()" because "args" is null
+	at org.example.serverCommands.SaveCommand.execute(SaveCommand.java:13)
+	at org.example.ServerController.specialHandle(ServerController.java:39)
+	at org.example.UdpServer.close(UdpServer.java:111)
+	at org.example.Main.main(Main.java:33)
+2026-04-04 13:37:37.595 [shutdown-hook] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:37:37.595 [main] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:41:23.507 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 13:41:30.868 [main] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:41:30.868 [shutdown-hook] INFO  org.example.UdpServer - Server turned off
+2026-04-04 13:58:47.455 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 13:58:58.422 [main] WARN  org.example.UdpServer - Server error
+java.io.InvalidClassException: filter status: REJECTED
+	at java.base/java.io.ObjectInputStream.filterCheck(ObjectInputStream.java:1351)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1920)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445)
+	at org.example.JavaSerializableCodec.decode(JavaSerializableCodec.java:32)
+	at org.example.UdpServer.handleKey(UdpServer.java:65)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-04 13:58:58.445 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:61352
+2026-04-04 14:03:30.095 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 14:03:34.317 [main] WARN  org.example.UdpServer - Server error
+java.io.InvalidClassException: filter status: REJECTED
+	at java.base/java.io.ObjectInputStream.filterCheck(ObjectInputStream.java:1351)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1920)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445)
+	at org.example.JavaSerializableCodec.decode(JavaSerializableCodec.java:53)
+	at org.example.UdpServer.handleKey(UdpServer.java:65)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-04 14:03:34.330 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:53847
+2026-04-04 14:04:42.070 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 14:04:46.678 [main] WARN  org.example.UdpServer - Server error
+java.io.InvalidClassException: filter status: REJECTED
+	at java.base/java.io.ObjectInputStream.filterCheck(ObjectInputStream.java:1351)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1920)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1785)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2101)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620)
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2480)
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2327)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2133)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1620)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:487)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:445)
+	at org.example.JavaSerializableCodec.decode(JavaSerializableCodec.java:46)
+	at org.example.UdpServer.handleKey(UdpServer.java:65)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-04 14:04:46.690 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:59200
+2026-04-04 14:06:15.112 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-04-04 14:06:25.538 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:55733
+2026-04-04 14:06:25.574 [main] DEBUG org.example.UdpServer - Command help is handled
+2026-04-04 14:06:25.579 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:55733
+2026-04-04 14:11:49.306 [main] WARN  org.example.UdpServer - Server error
+org.example.exceptions.CommandNotFoundException: Команда не найдена
+	at org.example.ServerController.getCommandModel(ServerController.java:47)
+	at org.example.UdpServer.handleModelRequest(UdpServer.java:100)
+	at org.example.UdpServer.handleKey(UdpServer.java:67)
+	at org.example.UdpServer.run(UdpServer.java:48)
+	at org.example.Main.main(Main.java:32)
+2026-04-04 14:11:49.315 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:55733
+2026-04-04 14:11:54.541 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:55733
+2026-04-04 14:11:54.548 [main] DEBUG org.example.UdpServer - Command exit is handled
+2026-04-04 14:11:54.548 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:55733
+2026-04-04 15:22:39.522 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222

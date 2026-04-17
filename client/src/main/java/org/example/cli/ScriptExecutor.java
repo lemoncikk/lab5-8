@@ -1,6 +1,6 @@
-package org.example;
+package org.example.cli;
 
-import org.example.cli.Parser;
+import org.example.Controller;
 import org.example.command.CommandArgs;
 import org.example.exceptions.AppException;
 import org.example.exceptions.DataAccessException;

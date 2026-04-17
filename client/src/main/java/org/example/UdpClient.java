@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.command.CommandResult;
 import org.example.exceptions.AppException;
 import org.example.requests.NetworkRequest;
@@ -12,11 +13,11 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
-
+@Slf4j
 public class UdpClient {
     private static final int BUFFER_SIZE = 8192;
-    private static final long DEFAULT_TIMEOUT = 3000;
-    private InetSocketAddress address;
+    private static final long DEFAULT_TIMEOUT = 10000;
+    private final InetSocketAddress address;
     private final DatagramChannel channel;
     private final ByteBuffer buffer;
     private final JavaSerializableCodec<NetworkRequest> requestCodec;
@@ -36,6 +37,7 @@ public class UdpClient {
         byte[] reqData = requestCodec.encode(req);
         var sendBuffer = ByteBuffer.wrap(reqData);
         channel.send(sendBuffer, address);
+        log.info("Package sent {}", address);
         long deadline = System.currentTimeMillis() + timeoutMs;
         while(System.currentTimeMillis() < deadline) {
             buffer.clear();
@@ -46,11 +48,12 @@ public class UdpClient {
                 buffer.get(res);
 
                 var decoded = responseCodec.decode(res);
-                switch (decoded) {
-                    case NetworkResponse.CommandSuccess s -> {if(s.id().equals(req.getId())) return s;}
-                    case NetworkResponse.ModelSuccess s -> {if(s.id().equals(req.getId())) return s;}
-                    case NetworkResponse.Error s -> { return s;}
-                    default -> {}
+                if (decoded instanceof NetworkResponse.CommandSuccess s) {
+                    if (s.id().equals(req.getId())) return s;
+                } else if (decoded instanceof NetworkResponse.ModelSuccess s) {
+                    if (s.id().equals(req.getId())) return s;
+                } else if (decoded instanceof NetworkResponse.Error s) {
+                    return s;
                 }
 
             }

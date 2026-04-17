@@ -1,6 +1,7 @@
 package org.example.cli;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.example.command.fields.DateField;
 import org.example.command.fields.EnumField;
 import org.example.command.fields.Field;
@@ -8,7 +9,7 @@ import org.example.command.fields.Field;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-@Log4j2
+@Slf4j
 public class FieldPromptService {
     private final BufferedReader ui;
 
@@ -39,7 +40,7 @@ public class FieldPromptService {
         return true; // вызывающий код должен повторить запрос
     }
 
-    private void printPrompt(Field field) {
+    private void printPrompt(Field<?> field) {
         if (field instanceof EnumField<?> enumField) {
             System.out.println(String.format(
                     "Выберите один из вариантов:\n%s",

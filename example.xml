@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Context>
     <MusicBand>
-        <id>1</id>
-        <name>s</name>
-        <coordinates>
-            <x>1</x>
-            <y>1</y>
-        </coordinates>
-        <creationDate>2006-06-17T00:00:00+04:00[Europe/Moscow]</creationDate>
-        <numberOfParticipants>1</numberOfParticipants>
-        <singlesCount>1</singlesCount>
-        <albumsCount>1</albumsCount>
-        <genre>BLUES</genre>
-        <bestAlbum>
-            <name>s</name>
-            <tracks>1</tracks>
-        </bestAlbum>
-    </MusicBand>
-    <MusicBand>
         <id>2</id>
         <name>Rammstain</name>
         <coordinates>

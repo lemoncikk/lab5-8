@@ -1,8 +1,7 @@
 package org.example.cli;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.example.Controller;
-import org.example.ScriptExecutor;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.exceptions.AppException;
@@ -15,13 +14,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-@Log4j2
+@Slf4j
 public class CLI {
     private final BufferedReader ui = new BufferedReader(new InputStreamReader(System.in));
     private final Controller ctrl;
     private boolean stopFlag = false;
+    private final FieldPromptService service = new FieldPromptService(ui);
 
-    public CLI(Controller ctrl) {
+    public CLI(Controller ctrl) throws IOException {
         this.ctrl = ctrl;
     }
 
@@ -36,6 +36,11 @@ public class CLI {
 
     private void handleRegularCommand(Parser.ParseResult res, Controller ctrl) throws IOException {
         try {
+            if (res.getCommandName().trim().equalsIgnoreCase("exit")) {
+                stopFlag = true;
+                System.out.println("Bye!");
+                return;
+            }
             CommandArgs model = ctrl.getCommandModel(res.getCommandName());
 
             if (model != null && !collectMissingArgs(model, res)) {
@@ -53,9 +58,8 @@ public class CLI {
                 log.warn("Command wasn't execute: ", e);
             }
             stopFlag = e.isStopFlag();
-            System.out.println(e.getMessage());
         } catch (AppException e) {
-            System.out.println(e.getMessage());
+            log.warn("Exception:", e);
         }
     }
 
@@ -66,7 +70,6 @@ public class CLI {
         for (int i = 0; i < fields.size(); i++) {
             Field<?> field = fields.get(i);
 
-            // Пробуем взять из аргументов командной строки
             if (i < args.size() && field.isValid(args.get(i))) {
                 field.setRawValue(args.get(i));
                 continue;
@@ -78,10 +81,8 @@ public class CLI {
             }
 
             // Запрашиваем у пользователя с повтором при ошибке
-            var fieldPromptService = new FieldPromptService(ui);
-            // успешно валидировано
             do {
-                boolean success = fieldPromptService.promptForField(field);
+                boolean success = service.promptForField(field);
                 if (!success) return false; // прервано
             } while (field.getValue() == null);
         }
@@ -103,7 +104,7 @@ public class CLI {
             var executor = new ScriptExecutor(res.args.get(0), ctrl);
             stopFlag = executor.exec();
         } catch (FileNotFoundException e) {
-            log.warn("File not found: ", e);
+            log.warn("File not found", e);
             System.out.println("Файл не найден");
         }
     }

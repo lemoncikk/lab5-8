@@ -1,0 +1,133 @@
+2026-04-05 16:59:29.664 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 16:59:58.796 [main] WARN  org.example.Main - Error while commandline args parsing
+java.lang.NumberFormatException: For input string: "se.ifmo.ru"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at org.example.Main.main(Main.java:17)
+2026-04-05 16:59:58.814 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 17:06:53.471 [main] WARN  org.example.Main - Error while commandline args parsing
+java.lang.NumberFormatException: For input string: "se.ifmo.ru"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at org.example.Main.main(Main.java:17)
+2026-04-05 17:06:53.475 [main] DEBUG org.example.Main - 2222
+2026-04-05 17:06:53.476 [main] DEBUG org.example.Main - 2222
+2026-04-05 17:06:53.489 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 17:07:10.400 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 17:07:10.401 [main] DEBUG org.example.Main - 2222
+2026-04-05 17:07:10.435 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 17:19:35.046 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 17:19:35.047 [main] DEBUG org.example.Main - 3333
+2026-04-05 17:19:35.073 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 17:29:21.527 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 17:29:21.528 [main] DEBUG org.example.Main - 3333
+2026-04-05 17:29:21.549 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:06:42.790 [main] WARN  org.example.Main - Error while commandline args parsing
+java.lang.NumberFormatException: For input string: "gui"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at org.example.Main.main(Main.java:16)
+2026-04-05 18:06:42.795 [main] DEBUG org.example.Main - 3333
+2026-04-05 18:06:42.796 [main] DEBUG org.example.Main - 2222
+2026-04-05 18:06:42.809 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:06:50.741 [main] WARN  org.example.Main - Error while commandline args parsing
+java.lang.NumberFormatException: For input string: "gui"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:662)
+	at org.example.Main.main(Main.java:16)
+2026-04-05 18:06:50.746 [main] DEBUG org.example.Main - 3333
+2026-04-05 18:06:50.747 [main] DEBUG org.example.Main - 2222
+2026-04-05 18:06:50.755 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:06:55.005 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Network is unreachable: sendto
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:10:33.192 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 18:10:33.193 [main] DEBUG org.example.Main - 3333
+2026-04-05 18:10:33.214 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:10:37.387 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:3333
+2026-04-05 18:10:47.389 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:14:21.940 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 18:14:21.941 [main] DEBUG org.example.Main - 3333
+2026-04-05 18:14:21.965 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:29:49.166 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-05 18:29:49.167 [main] DEBUG org.example.Main - 54321
+2026-04-05 18:29:49.187 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:29:51.911 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:30:01.913 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:30:05.249 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:30:15.249 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:41:26.840 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:41:36.840 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:43:39.154 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:43:49.155 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:44:29.792 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:44:39.792 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:45:50.021 [main] DEBUG org.example.Main - helios.cs.ifmo.ru
+2026-04-05 18:45:50.022 [main] DEBUG org.example.Main - 54321
+2026-04-05 18:45:50.057 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:45:53.478 [main] INFO  org.example.UdpClient - Package sent helios.cs.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:46:03.479 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:52:23.344 [main] DEBUG org.example.Main - helios.cs.ifmo.ru
+2026-04-05 18:52:23.345 [main] DEBUG org.example.Main - 54321
+2026-04-05 18:52:23.367 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 18:52:39.661 [main] INFO  org.example.UdpClient - Package sent helios.cs.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:52:49.663 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 18:55:19.885 [main] INFO  org.example.UdpClient - Package sent helios.cs.ifmo.ru/77.234.196.4:54321
+2026-04-05 18:55:29.886 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-05 20:37:57.897 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-05 20:37:57.900 [main] DEBUG org.example.Main - 2222
+2026-04-05 20:37:57.920 [main] DEBUG org.example.Main - App started via CLI
+2026-04-05 20:38:00.645 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-05 20:38:00.777 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222

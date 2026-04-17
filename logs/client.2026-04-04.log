@@ -1,0 +1,15 @@
+2026-04-04 12:32:53.397 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 12:38:36.517 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 12:50:29.659 [main] DEBUG org.example.Main - App started via CLI2026-04-04 13:58:56.489 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 14:03:32.022 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 14:04:44.043 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 14:06:11.324 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 15:18:44.668 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 15:27:08.840 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 15:47:04.721 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 15:48:52.236 [main] DEBUG org.example.Main - localhost
+2026-04-04 15:48:52.237 [main] DEBUG org.example.Main - 2222
+2026-04-04 15:48:52.266 [main] DEBUG org.example.Main - App started via CLI
+2026-04-04 15:52:05.253 [main] DEBUG org.example.Main - localhost
+2026-04-04 15:52:05.255 [main] DEBUG org.example.Main - 2222
+2026-04-04 15:52:05.286 [main] DEBUG org.example.Main - App started via CLI

@@ -1,20 +1,20 @@
 package org.example.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.Controller;
 import org.example.NetworkResponse;
 import org.example.UdpClient;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.exceptions.AppException;
+import org.example.exceptions.NetworkException;
 import org.example.requests.ExecuteRequest;
 import org.example.requests.ModelRequest;
-import org.example.requests.NetworkRequest;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
-
+@Slf4j
 public class NetworkController implements Controller {
     private final UdpClient client;
 
@@ -33,10 +33,10 @@ public class NetworkController implements Controller {
             if (res instanceof NetworkResponse.Error e) {
                 throw new AppException(e.message());
             }
-            throw new AppException("Wrong answer from server");
+            throw new NetworkException("Wrong answer from server");
 
         } catch (TimeoutException | InterruptedException | IOException | ClassNotFoundException e) {
-            throw new AppException(e.getMessage());
+            throw new NetworkException(e.getMessage());
         }
     }
 
@@ -51,10 +51,10 @@ public class NetworkController implements Controller {
             if (res instanceof NetworkResponse.Error e) {
                 throw new AppException(e.message());
             }
-            throw new AppException("Wrong answer from server");
+            throw new NetworkException("Wrong answer from server");
 
         } catch (TimeoutException | InterruptedException | IOException | ClassNotFoundException e) {
-            throw new AppException(e.getMessage());
+            throw new NetworkException(e.getMessage());
         }
     }
 }
