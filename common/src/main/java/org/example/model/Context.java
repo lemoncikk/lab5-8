@@ -42,6 +42,9 @@ public class Context {
     public ArrayList<MusicBand> getAll() {
         return new ArrayList<>(store);
     }
+    public ArrayList<MusicBand> getAll(int limit) {
+        return new ArrayList<>(store.stream().limit(limit).toList());
+    }
 
     public void add(MusicBand mb) {
         store.push(mb);

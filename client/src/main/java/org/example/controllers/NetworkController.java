@@ -1,9 +1,7 @@
 package org.example.controllers;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.Controller;
-import org.example.NetworkResponse;
-import org.example.UdpClient;
+import org.example.*;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.exceptions.AppException;
@@ -19,7 +17,7 @@ public class NetworkController implements Controller {
     private final UdpClient client;
 
     public NetworkController(int port, String hostName) throws IOException {
-        client = new UdpClient(port, hostName);
+        client = new UdpDatagramClient(port, hostName);
     }
 
     @Override
@@ -36,6 +34,8 @@ public class NetworkController implements Controller {
             throw new NetworkException("Wrong answer from server");
 
         } catch (TimeoutException | InterruptedException | IOException | ClassNotFoundException e) {
+            throw new NetworkException(e.getMessage());
+        } catch (Exception e) {
             throw new NetworkException(e.getMessage());
         }
     }
@@ -54,6 +54,8 @@ public class NetworkController implements Controller {
             throw new NetworkException("Wrong answer from server");
 
         } catch (TimeoutException | InterruptedException | IOException | ClassNotFoundException e) {
+            throw new NetworkException(e.getMessage());
+        } catch (Exception e) {
             throw new NetworkException(e.getMessage());
         }
     }

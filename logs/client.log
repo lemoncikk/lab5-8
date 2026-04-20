@@ -1,64 +1,92 @@
-2026-04-17 22:29:49.549 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-17 22:29:49.555 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:29:49.575 [main] DEBUG org.example.Main - App started via CLI
-2026-04-17 22:29:56.068 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-17 22:30:06.070 [main] WARN  org.example.cli.CLI - Exception:
+2026-04-18 09:55:14.616 [main] DEBUG org.example.Main - localhost
+2026-04-18 09:55:14.631 [main] DEBUG org.example.Main - 2222
+2026-04-18 09:55:14.676 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 09:55:18.390 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-18 09:55:28.393 [main] WARN  org.example.cli.CLI - Exception:
 org.example.exceptions.NetworkException: Timeout!
 	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
 	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:38)
-2026-04-17 22:31:53.950 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-17 22:31:53.954 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:31:53.967 [main] DEBUG org.example.Main - App started via CLI
-2026-04-17 22:32:56.477 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-17 22:32:56.478 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:32:56.532 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-17 22:33:37.855 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-17 22:33:37.856 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:33:37.907 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-17 22:35:38.549 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-17 22:35:38.550 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:35:38.605 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-17 22:35:51.623 [main] DEBUG org.example.Main - localhost
-2026-04-17 22:35:51.624 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:35:51.686 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:13.502 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:13.511 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:16.475 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:17.357 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:26.617 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:33.283 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:34.509 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:35.003 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:36:35.847 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:38:01.550 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:38:01.554 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:38:58.456 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:38:58.465 [main] ERROR org.example.tui.view.BandList - Quit error: 
-org.example.exceptions.AppException: Команда не найдена
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:52)
-	at org.example.tui.view.BandList.quit(BandList.java:110)
-	at org.example.tui.view.BandList.update(BandList.java:77)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.eventLoop(Program.java:679)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.runInternal(Program.java:465)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.run(Program.java:410)
-	at org.example.Main.main(Main.java:32)
-2026-04-17 22:38:58.470 [main] DEBUG org.example.Main - App started via TUI
-2026-04-17 22:40:29.288 [main] DEBUG org.example.Main - localhost
-2026-04-17 22:40:29.289 [main] DEBUG org.example.Main - 2222
-2026-04-17 22:40:29.347 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:40:34.485 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:40:34.490 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:40:34.493 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:40:38.192 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-17 22:40:38.199 [main] ERROR org.example.tui.view.BandList - Quit error: 
-org.example.exceptions.AppException: Команда не найдена
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:52)
-	at org.example.tui.view.BandList.quit(BandList.java:110)
-	at org.example.tui.view.BandList.update(BandList.java:77)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.eventLoop(Program.java:679)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.runInternal(Program.java:465)
-	at com.williamcallahan.tui4j.compat.bubbletea.Program.run(Program.java:410)
-	at org.example.Main.main(Main.java:32)
-2026-04-17 22:40:38.204 [main] DEBUG org.example.Main - App started via TUI
+	at org.example.Main.main(Main.java:39)
+2026-04-18 09:56:21.737 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-18 09:56:31.746 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 09:57:14.392 [main] DEBUG org.example.Main - localhost
+2026-04-18 09:57:14.393 [main] DEBUG org.example.Main - 2222
+2026-04-18 09:57:14.429 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 09:57:16.223 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-18 09:57:26.224 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 09:57:35.566 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-04-18 09:57:35.567 [main] DEBUG org.example.Main - 51492
+2026-04-18 09:57:35.626 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 09:57:37.953 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:51492
+2026-04-18 09:57:47.955 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 09:58:14.660 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 09:58:14.662 [main] DEBUG org.example.Main - 2222
+2026-04-18 09:58:14.688 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 09:58:16.526 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-18 09:58:16.657 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-18 14:16:51.962 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 14:16:51.964 [main] DEBUG org.example.Main - 2222
+2026-04-18 14:16:51.989 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 14:17:27.810 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-18 14:17:27.959 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-18 15:13:00.109 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:13:00.111 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:13:00.143 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:35:43.263 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:35:43.265 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:35:43.298 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:37:59.073 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:37:59.075 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:37:59.098 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:38:03.121 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.example.command.fields.Field.getValue()" is null
+	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 15:40:49.022 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:40:49.024 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:40:49.048 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:40:51.455 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Cannot invoke "org.example.command.fields.IntField.getValue()" because the return value of "org.example.command.fields.Field.getValue()" is null
+	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 15:40:53.521 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: class java.lang.Integer cannot be cast to class org.example.command.fields.IntField (java.lang.Integer is in module java.base of loader 'bootstrap'; org.example.command.fields.IntField is in unnamed module of loader 'app')
+	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 15:43:07.404 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:43:07.405 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:43:07.432 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:43:10.489 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: class java.lang.Integer cannot be cast to class org.example.command.fields.IntField (java.lang.Integer is in module java.base of loader 'bootstrap'; org.example.command.fields.IntField is in unnamed module of loader 'app')
+	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:39)
+2026-04-18 15:44:15.600 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:44:15.602 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:44:15.629 [main] DEBUG org.example.Main - App started via CLI
+2026-04-18 15:45:25.824 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-18 15:45:25.827 [main] DEBUG org.example.Main - 2222
+2026-04-18 15:45:25.856 [main] DEBUG org.example.Main - App started via CLI

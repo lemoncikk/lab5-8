@@ -1,0 +1,78 @@
+2026-04-17 22:29:49.549 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 22:29:49.555 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:29:49.575 [main] DEBUG org.example.Main - App started via CLI
+2026-04-17 22:29:56.068 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 22:30:06.070 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Timeout!
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:121)
+	at org.example.Main.main(Main.java:38)
+2026-04-17 22:31:53.950 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 22:31:53.954 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:31:53.967 [main] DEBUG org.example.Main - App started via CLI
+2026-04-17 22:32:56.477 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 22:32:56.478 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:32:56.532 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 22:33:37.855 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 22:33:37.856 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:33:37.907 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 22:35:38.549 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 22:35:38.550 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:35:38.605 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 22:35:51.623 [main] DEBUG org.example.Main - localhost
+2026-04-17 22:35:51.624 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:35:51.686 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:13.502 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:13.511 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:16.475 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:17.357 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:26.617 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:33.283 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:34.509 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:35.003 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:36:35.847 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:38:01.550 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:38:01.554 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:38:58.456 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:38:58.465 [main] ERROR org.example.tui.view.BandList - Quit error: 
+org.example.exceptions.AppException: Команда не найдена
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:52)
+	at org.example.tui.view.BandList.quit(BandList.java:110)
+	at org.example.tui.view.BandList.update(BandList.java:77)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.eventLoop(Program.java:679)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.runInternal(Program.java:465)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.run(Program.java:410)
+	at org.example.Main.main(Main.java:32)
+2026-04-17 22:38:58.470 [main] DEBUG org.example.Main - App started via TUI
+2026-04-17 22:40:29.288 [main] DEBUG org.example.Main - localhost
+2026-04-17 22:40:29.289 [main] DEBUG org.example.Main - 2222
+2026-04-17 22:40:29.347 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:40:34.485 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:40:34.490 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:40:34.493 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:40:38.192 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 22:40:38.199 [main] ERROR org.example.tui.view.BandList - Quit error: 
+org.example.exceptions.AppException: Команда не найдена
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:52)
+	at org.example.tui.view.BandList.quit(BandList.java:110)
+	at org.example.tui.view.BandList.update(BandList.java:77)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.eventLoop(Program.java:679)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.runInternal(Program.java:465)
+	at com.williamcallahan.tui4j.compat.bubbletea.Program.run(Program.java:410)
+	at org.example.Main.main(Main.java:32)
+2026-04-17 22:40:38.204 [main] DEBUG org.example.Main - App started via TUI
+2026-04-17 23:16:18.525 [main] DEBUG org.example.Main - localhost
+2026-04-17 23:16:18.526 [main] DEBUG org.example.Main - 2222
+2026-04-17 23:16:18.604 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
+2026-04-17 23:16:46.318 [main] DEBUG org.example.Main - 194.87.68.237
+2026-04-17 23:16:46.319 [main] DEBUG org.example.Main - 2222
+2026-04-17 23:16:46.335 [main] DEBUG org.example.Main - App started via CLI
+2026-04-17 23:16:50.217 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:16:50.383 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:08.963 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:08.996 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:23.668 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:23.679 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:29.904 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
+2026-04-17 23:17:39.886 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
