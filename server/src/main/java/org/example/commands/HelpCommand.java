@@ -1,11 +1,12 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.exceptions.CommandExecutionException;
 import org.example.command.fields.StringField;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 
 public class HelpCommand implements Command {
 
@@ -14,7 +15,7 @@ public class HelpCommand implements Command {
         StringBuilder msg = new StringBuilder();
         String cmdName = ((StringField)(args.getFields().get(0))).getValue();
         if (cmdName == null) {
-            for (var entry : ctx.registry) {
+            for (var entry : ctx.getRegistry()) {
                 msg.append(String.format(
                         "Команда %s - %s\n",
                         entry.getValue().getName(),
@@ -22,10 +23,10 @@ public class HelpCommand implements Command {
                 ));
             }
         } else {
-            if (!ctx.registry.containsCommand(cmdName)) {
+            if (!ctx.getRegistry().containsCommand(cmdName)) {
                 throw new CommandExecutionException("Такой команды нет");
             }
-            Command cmd = ctx.registry.get(cmdName);
+            Command cmd = ctx.getRegistry().get(cmdName);
             msg.append(String.format(
                     "Команда %s - %s\nАргументы команды(в порядке ввода):\n",
                     cmd.getName(),

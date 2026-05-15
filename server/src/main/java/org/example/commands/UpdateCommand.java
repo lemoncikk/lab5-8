@@ -1,10 +1,11 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.command.fields.*;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 import org.example.model.MusicBandBuilder;
 import org.example.model.MusicGenre;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 public class UpdateCommand implements Command {
     @Override
-    public CommandResult execute(Context ctx, CommandArgs args) {
+    public CommandResult execute(Context ctx, CommandArgs args) throws Exception {
         var fields = args.getFields();
         var mb = new MusicBandBuilder(new ArrayList<>(fields.subList(1, fields.size()))).build();
         ctx.update((int)(fields.get(0).getValue()), mb);

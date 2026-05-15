@@ -1,15 +1,16 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 import org.example.model.MusicBand;
 
 public class SumCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        var sum = ctx.getStore().stream().mapToLong(MusicBand::getNumberOfParticipants).sum();
+        var sum = ctx.getAll().stream().mapToLong(MusicBand::getNumberOfParticipants).sum();
         return new CommandResult(String.format("%d", sum), null, false);
     }
 

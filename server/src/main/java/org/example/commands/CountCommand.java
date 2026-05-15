@@ -1,17 +1,18 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.command.fields.IntField;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 
 public class CountCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
         int i = (int)(args.getFields().get(0).getValue());
 
-        var count = ctx.getStore().stream().filter(e -> e.getGenre().getId() > i).count();
+        var count = ctx.getAll().stream().filter(e -> e.getGenre().getId() > i).count();
         return new CommandResult(String.format("%d", count), null, false);
     }
 

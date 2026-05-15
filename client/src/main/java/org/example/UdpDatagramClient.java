@@ -1,14 +1,12 @@
 package org.example;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.exceptions.AppException;
-import org.example.exceptions.NetworkException;
+import org.example.requests.CommandRequest;
 import org.example.requests.NetworkRequest;
+import org.example.responses.NetworkResponse;
 
-import javax.xml.crypto.Data;
-import java.io.IOException;
 import java.net.*;
-import java.util.concurrent.TimeoutException;
+
 @Slf4j
 public class UdpDatagramClient implements UdpClient {
     DatagramSocket socket;
@@ -43,6 +41,8 @@ public class UdpDatagramClient implements UdpClient {
         } else if (decoded instanceof NetworkResponse.ModelSuccess s) {
             if (s.id().equals(req.getId())) return s;
         } else if (decoded instanceof NetworkResponse.Error s) {
+            return s;
+        } else if (decoded instanceof NetworkResponse.AuthSuccess s) {
             return s;
         }
         log.warn("Wrong type:{}", decoded);

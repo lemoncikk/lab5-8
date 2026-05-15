@@ -60,6 +60,8 @@ public class CLI {
             stopFlag = e.isStopFlag();
         } catch (AppException e) {
             log.warn("Exception:", e);
+        } catch (Exception e) {
+            log.warn("Exception:", e);
         }
     }
 

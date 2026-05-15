@@ -4,7 +4,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
 
-public class ModelRequest extends NetworkRequest implements Serializable {
+public class ModelRequest extends CommandRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 

@@ -1,9 +1,7 @@
-package org.example;
+package org.example.command;
 
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ScanResult;
-import org.example.command.Command;
-import org.example.command.CommandRegistry;
 
 public class CommandLoader {
     public static void load(CommandRegistry cr, String path) {

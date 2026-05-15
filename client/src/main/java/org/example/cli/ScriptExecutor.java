@@ -84,6 +84,8 @@ public class ScriptExecutor {
             }
         } catch (IOException e) {
             throw new DataAccessException(e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return stopFlag;
 

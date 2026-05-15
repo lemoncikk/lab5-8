@@ -1,35 +1,36 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.command.Flag;
 import org.example.exceptions.AppException;
 import org.example.command.fields.StringField;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 
 public class ExitCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
-        if(args.getFlags().get(0).isOn()) {
-            String path = ((StringField)(args.getFields().get(0))).getValue();
-            if (path != null) {
-                try {
-                    ctx.saveToFile(path);
-                    return new CommandResult("Bye", null, true);
-                } catch (Exception e) {
-                    throw new AppException(e.getMessage());
-                }
-            }
-            if (ctx.getArgs().length > 0) {
-                try {
-                    ctx.saveToFile(ctx.getArgs()[0]);
-                    return new CommandResult("Bye", null, true);
-                } catch (Exception e) {
-                    throw new AppException(e.getMessage());
-                }
-            }
-        }
+//        if(args.getFlags().get(0).isOn()) {
+//            String path = ((StringField)(args.getFields().get(0))).getValue();
+//            if (path != null) {
+//                try {
+//                    ctx.saveToFile(path);
+//                    return new CommandResult("Bye", null, true);
+//                } catch (Exception e) {
+//                    throw new AppException(e.getMessage());
+//                }
+//            }
+//            if (ctx.getArgs().length > 0) {
+//                try {
+//                    ctx.saveToFile(ctx.getArgs()[0]);
+//                    return new CommandResult("Bye", null, true);
+//                } catch (Exception e) {
+//                    throw new AppException(e.getMessage());
+//                }
+//            }
+//        }
         return new CommandResult("Bye", null, true);
     }
 

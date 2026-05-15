@@ -1,10 +1,11 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
 import org.example.command.fields.StringField;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 import org.example.model.MusicBand;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class FilterCommand implements Command {
     @Override
     public CommandResult execute(Context ctx, CommandArgs args) {
         String s = (String)(args.getFields().get(0).getValue());
-        ArrayList<MusicBand> m = ctx.getStore().stream().filter(
+        ArrayList<MusicBand> m = ctx.getAll().stream().filter(
                 e -> e.getName().startsWith(s)).collect(Collectors.toCollection(ArrayList::new));
         return new CommandResult("Были найдены совпадения:", m, false);
     }

@@ -1,9 +1,10 @@
 package org.example.commands;
 
+import org.example.Context;
 import org.example.command.Command;
 import org.example.command.CommandArgs;
 import org.example.command.CommandResult;
-import org.example.model.Context;
+import org.example.OneTreadContext;
 
 public class ReorderCommand implements Command {
     @Override

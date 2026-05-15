@@ -1,10 +1,10 @@
 package org.example.command;
 
 import org.example.exceptions.AppException;
-import org.example.model.Context;
+import org.example.Context;
 
 public interface Command {
-    CommandResult execute(Context ctx, CommandArgs args) throws AppException;
+    CommandResult execute(Context ctx, CommandArgs args) throws Exception;
 
     String getDescription();
 

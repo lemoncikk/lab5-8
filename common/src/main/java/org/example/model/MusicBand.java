@@ -4,6 +4,8 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import lombok.Getter;
+import lombok.Setter;
 import org.example.exceptions.ValidationException;
 
 import java.io.Serial;
@@ -25,6 +27,9 @@ public class MusicBand implements Serializable {
     private static final long serialVersionUID = 1L;
     static int next_id = 1;
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    @Getter
+    @Setter
+    private int ownerId;
     private String name = null; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates = null; //Поле не может быть null
     @XmlJavaTypeAdapter(ZonedDateTimeAdapter.class)
@@ -35,7 +40,7 @@ public class MusicBand implements Serializable {
     private MusicGenre genre = null; //Поле может быть null
     private Album bestAlbum = null; //Поле может быть null
 
-    MusicBand() {
+    public MusicBand() {
         id = next_id++;
     }
 
@@ -47,7 +52,7 @@ public class MusicBand implements Serializable {
      * <b>ДАННЫЙ МЕТОД НЕОБХОДИМ ТОЛЬКО ДЛЯ ДЕСЕРИАЛИЗАЦИИ, НЕ ИСПОЛЬЗУЙТЕ ЕГОВ КОДЕ</b>
      * @param id  уникальный id поля
      */
-    void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -55,7 +60,7 @@ public class MusicBand implements Serializable {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         if (name == null || name.isEmpty())
             throw new ValidationException("Expected not null value, but founded null");
         this.name = name;
@@ -65,7 +70,7 @@ public class MusicBand implements Serializable {
         return coordinates;
     }
 
-    void setCoordinates(Coordinates coordinates) {
+    public void setCoordinates(Coordinates coordinates) {
         if (coordinates == null)
             throw new ValidationException("Expected not null value, but founded null");
         this.coordinates = coordinates;
@@ -75,7 +80,7 @@ public class MusicBand implements Serializable {
         return creationDate;
     }
 
-    void setCreationDate(ZonedDateTime creationDate) {
+    public void setCreationDate(ZonedDateTime creationDate) {
         if (creationDate == null)
             throw new ValidationException("Expected not null value, but founded null");
         this.creationDate = creationDate;
@@ -85,7 +90,7 @@ public class MusicBand implements Serializable {
         return numberOfParticipants;
     }
 
-    void setNumberOfParticipants(long numberOfParticipants) {
+    public void setNumberOfParticipants(long numberOfParticipants) {
         if (numberOfParticipants < 1)
             throw new ValidationException("Expected value greater than 1");
         this.numberOfParticipants = numberOfParticipants;
@@ -95,7 +100,7 @@ public class MusicBand implements Serializable {
         return singlesCount;
     }
 
-    void setSinglesCount(long singlesCount) {
+    public void setSinglesCount(long singlesCount) {
         if (singlesCount < 1)
             throw new ValidationException("Expected value greater than 1");
         this.singlesCount = singlesCount;
@@ -105,7 +110,7 @@ public class MusicBand implements Serializable {
         return albumsCount;
     }
 
-    void setAlbumsCount(Integer albumsCount) {
+    public void setAlbumsCount(Integer albumsCount) {
         if (albumsCount < 1)
             throw new ValidationException("Expected value greater than 1");
         this.albumsCount = albumsCount;
@@ -115,7 +120,7 @@ public class MusicBand implements Serializable {
         return genre;
     }
 
-    void setGenre(MusicGenre genre) {
+    public void setGenre(MusicGenre genre) {
         this.genre = genre;
     }
 
@@ -123,7 +128,7 @@ public class MusicBand implements Serializable {
         return bestAlbum;
     }
 
-    void setBestAlbum(Album bestAlbum) {
+    public void setBestAlbum(Album bestAlbum) {
         this.bestAlbum = bestAlbum;
     }
 

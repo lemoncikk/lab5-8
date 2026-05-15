@@ -1,7 +1,9 @@
 package org.example;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.requests.CommandRequest;
 import org.example.requests.NetworkRequest;
+import org.example.responses.NetworkResponse;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

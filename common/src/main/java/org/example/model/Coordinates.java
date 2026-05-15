@@ -18,16 +18,16 @@ public class Coordinates implements Serializable {
 
     Coordinates(){}
 
-    Coordinates(long x, Integer y){
+    public Coordinates(long x, Integer y){
         this.x = x;
         this.y = y;
     }
 
-    long getX() {
+    public long getX() {
         return x;
     }
 
-    Integer getY() {
+    public Integer getY() {
         return y;
     }
 

@@ -1,63 +1,214 @@
-2026-04-17 22:35:29.352 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
-2026-04-17 22:35:51.687 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:35:51.697 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:35:51.710 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:13.502 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:13.506 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:13.511 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:13.515 [main] DEBUG org.example.UdpServer - Command remove_by_id is handled
-2026-04-17 22:36:13.517 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:16.475 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:16.478 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:17.357 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:17.358 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:36:17.359 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:26.617 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:26.618 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:33.284 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:33.284 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:36:33.285 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:34.510 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:34.511 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:35.003 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:35.004 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:36:35.004 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:36:35.847 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:36:35.848 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:38:01.550 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:38:01.552 [main] DEBUG org.example.UdpServer - Command add is handled
-2026-04-17 22:38:01.553 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:38:01.554 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:38:01.554 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:38:01.555 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:38:58.456 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51071 (toString: /127.0.0.1:51071)
-2026-04-17 22:38:58.457 [main] WARN  org.example.UdpServer - Server error
+2026-05-15 20:43:10.154 [main] ERROR org.example.Main - Critical error
+java.lang.IllegalArgumentException: org.postgresql.jdbc.PgConnection is not an interface
+	at java.base/java.lang.reflect.Proxy$ProxyBuilder.validateProxyInterfaces(Proxy.java:608)
+	at java.base/java.lang.reflect.Proxy$ProxyBuilder.<init>(Proxy.java:560)
+	at java.base/java.lang.reflect.Proxy$ProxyBuilder.<init>(Proxy.java:568)
+	at java.base/java.lang.reflect.Proxy.lambda$getProxyConstructor$0(Proxy.java:390)
+	at java.base/jdk.internal.loader.AbstractClassLoaderValue$Memoizer.get(AbstractClassLoaderValue.java:329)
+	at java.base/jdk.internal.loader.AbstractClassLoaderValue.computeIfAbsent(AbstractClassLoaderValue.java:205)
+	at java.base/java.lang.reflect.Proxy.getProxyConstructor(Proxy.java:388)
+	at java.base/java.lang.reflect.Proxy.newProxyInstance(Proxy.java:924)
+	at org.example.db.PooledConnection.wrap(PooledConnection.java:45)
+	at org.example.db.ConnectionPool.get(ConnectionPool.java:39)
+	at org.example.Db.getAllMusicBands(Db.java:410)
+	at org.example.TreadSafeContext.loadFromDb(TreadSafeContext.java:133)
+	at org.example.TreadSafeContext.<init>(TreadSafeContext.java:31)
+	at org.example.Main.main(Main.java:10)
+2026-05-15 20:45:51.928 [main] ERROR org.example.Main - Critical error
+org.postgresql.util.PSQLException: ОШИБКА: столбец b.albums_count не существует
+  Подсказка: Возможно, предполагалась ссылка на столбец "b.album_count".
+  Позиция: 100
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:139)
+	at org.example.Db.getAllMusicBands(Db.java:412)
+	at org.example.TreadSafeContext.loadFromDb(TreadSafeContext.java:133)
+	at org.example.TreadSafeContext.<init>(TreadSafeContext.java:31)
+	at org.example.Main.main(Main.java:10)
+2026-05-15 20:46:57.897 [main] INFO  org.example.TreadSafeContext - Loaded 0 bands from database
+2026-05-15 20:46:58.231 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-05-15 20:49:26.765 [pool-1-thread-1] INFO  org.example.UdpServer - Request from: /127.0.0.1:63632 (toString: /127.0.0.1:63632)
+2026-05-15 20:49:26.774 [pool-2-thread-1] WARN  org.example.UdpServer - Server error
 org.example.exceptions.CommandNotFoundException: Команда не найдена
-	at org.example.ServerController.getCommandModel(ServerController.java:47)
-	at org.example.UdpServer.handleModelRequest(UdpServer.java:110)
-	at org.example.UdpServer.getRequestResponse(UdpServer.java:57)
-	at org.example.UdpServer.handleKey(UdpServer.java:78)
-	at org.example.UdpServer.run(UdpServer.java:48)
-	at org.example.Main.main(Main.java:32)
-2026-04-17 22:38:58.463 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51071
-2026-04-17 22:40:29.347 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
-2026-04-17 22:40:29.348 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:40:29.348 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
-2026-04-17 22:40:34.486 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
-2026-04-17 22:40:34.486 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
-2026-04-17 22:40:34.491 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
-2026-04-17 22:40:34.491 [main] DEBUG org.example.UdpServer - Command remove_by_id is handled
-2026-04-17 22:40:34.492 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
-2026-04-17 22:40:34.493 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
-2026-04-17 22:40:34.494 [main] DEBUG org.example.UdpServer - Command show is handled
-2026-04-17 22:40:34.495 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
-2026-04-17 22:40:38.192 [main] INFO  org.example.UdpServer - Request from: /127.0.0.1:51468 (toString: /127.0.0.1:51468)
-2026-04-17 22:40:38.193 [main] WARN  org.example.UdpServer - Server error
+	at org.example.ServerController.getCommandModel(ServerController.java:92)
+	at org.example.UdpServer.handleModelRequest(UdpServer.java:152)
+	at org.example.UdpServer.handleCommandRequest(UdpServer.java:78)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:68)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 20:49:26.782 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:63632
+2026-05-15 20:49:37.292 [pool-1-thread-7] INFO  org.example.UdpServer - Request from: /127.0.0.1:63632 (toString: /127.0.0.1:63632)
+2026-05-15 20:49:37.301 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:63632
+2026-05-15 20:59:04.730 [main] ERROR org.example.Main - Critical error
+java.nio.channels.ClosedSelectorException
+	at java.base/sun.nio.ch.SelectorImpl.ensureOpen(SelectorImpl.java:81)
+	at java.base/sun.nio.ch.SelectorImpl.selectedKeys(SelectorImpl.java:92)
+	at org.example.UdpServer.run(UdpServer.java:52)
+	at org.example.Main.main(Main.java:24)
+2026-05-15 20:59:14.486 [main] INFO  org.example.TreadSafeContext - Loaded 0 bands from database
+2026-05-15 20:59:15.035 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-05-15 21:10:49.232 [main] ERROR org.example.Main - Critical error
+java.nio.channels.ClosedSelectorException
+	at java.base/sun.nio.ch.SelectorImpl.ensureOpen(SelectorImpl.java:81)
+	at java.base/sun.nio.ch.SelectorImpl.selectedKeys(SelectorImpl.java:92)
+	at org.example.UdpServer.run(UdpServer.java:52)
+	at org.example.Main.main(Main.java:24)
+2026-05-15 21:11:00.080 [main] INFO  org.example.TreadSafeContext - Loaded 0 bands from database
+2026-05-15 21:11:00.648 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-05-15 21:11:17.682 [pool-1-thread-1] INFO  org.example.UdpServer - Request from: /127.0.0.1:49206 (toString: /127.0.0.1:49206)
+2026-05-15 21:11:17.865 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:49206
+2026-05-15 21:15:59.365 [pool-1-thread-10] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:15:59.523 [pool-2-thread-2] WARN  org.example.TokenManager - Error while registration.
+org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "uq_person_login"
+  Подробности: Ключ "(login)=(login)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at org.example.Db.addUser(Db.java:151)
+	at org.example.TokenManager.register(TokenManager.java:39)
+	at org.example.ServerController.register(ServerController.java:50)
+	at org.example.UdpServer.handleAuthRequest(UdpServer.java:163)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:71)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:15:59.525 [pool-2-thread-2] WARN  org.example.UdpServer - Auth error
+org.example.exceptions.AuthException: Db error
+	at org.example.TokenManager.register(TokenManager.java:42)
+	at org.example.ServerController.register(ServerController.java:50)
+	at org.example.UdpServer.handleAuthRequest(UdpServer.java:163)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:71)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:15:59.525 [pool-2-thread-2] ERROR org.example.UdpServer - Failed authentication
+org.example.exceptions.AuthException: Db error
+	at org.example.TokenManager.register(TokenManager.java:42)
+	at org.example.ServerController.register(ServerController.java:50)
+	at org.example.UdpServer.handleAuthRequest(UdpServer.java:163)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:71)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:15:59.527 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:09.207 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:09.253 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:18.931 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:18.939 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:18.944 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:18.946 [pool-2-thread-2] DEBUG org.example.UdpServer - Command help is handled
+2026-05-15 21:16:18.950 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:23.560 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:23.561 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:23.562 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:23.563 [pool-2-thread-2] DEBUG org.example.UdpServer - Command info is handled
+2026-05-15 21:16:23.564 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:16:28.382 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:16:28.391 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:17:11.324 [pool-1-thread-14] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:17:11.327 [pool-2-thread-2] DEBUG org.example.UdpServer - Command add is handled
+2026-05-15 21:17:11.480 [pool-2-thread-2] ERROR org.example.UdpServer - Server error
+org.postgresql.util.PSQLException: ОШИБКА: нет уникального ограничения или ограничения-исключения, соответствующего указанию ON CONFLICT
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at org.example.Db.addMusicBand(Db.java:71)
+	at org.example.TreadSafeContext.add(TreadSafeContext.java:62)
+	at org.example.commands.AddCommand.execute(AddCommand.java:17)
+	at org.example.ServerController.handle(ServerController.java:77)
+	at org.example.UdpServer.handleExecuteRequest(UdpServer.java:147)
+	at org.example.UdpServer.handleCommandRequest(UdpServer.java:80)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:68)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:17:11.481 [pool-3-thread-2] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:20:34.595 [pool-1-thread-17] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:20:34.597 [pool-3-thread-3] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:21:04.147 [pool-1-thread-17] INFO  org.example.UdpServer - Request from: /127.0.0.1:60865 (toString: /127.0.0.1:60865)
+2026-05-15 21:21:04.148 [pool-2-thread-3] DEBUG org.example.UdpServer - Command add is handled
+2026-05-15 21:21:04.311 [pool-2-thread-3] ERROR org.example.UdpServer - Server error
+org.postgresql.util.PSQLException: ОШИБКА: столбец "albums_count" в таблице "band" не существует
+  Позиция: 104
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:139)
+	at org.example.Db.addMusicBand(Db.java:126)
+	at org.example.TreadSafeContext.add(TreadSafeContext.java:62)
+	at org.example.commands.AddCommand.execute(AddCommand.java:17)
+	at org.example.ServerController.handle(ServerController.java:77)
+	at org.example.UdpServer.handleExecuteRequest(UdpServer.java:147)
+	at org.example.UdpServer.handleCommandRequest(UdpServer.java:80)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:68)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:21:04.312 [pool-3-thread-3] DEBUG org.example.UdpServer - Package sent /127.0.0.1:60865
+2026-05-15 21:22:01.401 [main] INFO  org.example.TreadSafeContext - Loaded 0 bands from database
+2026-05-15 21:22:01.730 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
+2026-05-15 21:22:11.212 [pool-1-thread-1] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:22:11.279 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:22:15.566 [pool-1-thread-5] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:22:15.574 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:22:54.054 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:22:54.058 [pool-2-thread-1] DEBUG org.example.UdpServer - Command add is handled
+2026-05-15 21:22:54.143 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:22:59.498 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:22:59.499 [pool-2-thread-1] ERROR org.example.UdpServer - Server error
 org.example.exceptions.CommandNotFoundException: Команда не найдена
-	at org.example.ServerController.getCommandModel(ServerController.java:47)
-	at org.example.UdpServer.handleModelRequest(UdpServer.java:110)
-	at org.example.UdpServer.getRequestResponse(UdpServer.java:57)
-	at org.example.UdpServer.handleKey(UdpServer.java:78)
-	at org.example.UdpServer.run(UdpServer.java:48)
-	at org.example.Main.main(Main.java:32)
-2026-04-17 22:40:38.194 [main] DEBUG org.example.UdpServer - Package sent /127.0.0.1:51468
+	at org.example.ServerController.getCommandModel(ServerController.java:92)
+	at org.example.UdpServer.handleModelRequest(UdpServer.java:152)
+	at org.example.UdpServer.handleCommandRequest(UdpServer.java:78)
+	at org.example.UdpServer.getRequestResponse(UdpServer.java:68)
+	at org.example.UdpServer.lambda$handleKey$0(UdpServer.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-15 21:22:59.503 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:23:02.326 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:23:02.327 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:23:02.328 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:23:02.330 [pool-2-thread-1] DEBUG org.example.UdpServer - Command help is handled
+2026-05-15 21:23:02.331 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:23:09.097 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:23:09.098 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 21:23:12.458 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
+2026-05-15 21:23:12.459 [pool-2-thread-1] DEBUG org.example.UdpServer - Command show is handled
+2026-05-15 21:23:12.467 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479

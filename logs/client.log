@@ -1,92 +1,110 @@
-2026-04-18 09:55:14.616 [main] DEBUG org.example.Main - localhost
-2026-04-18 09:55:14.631 [main] DEBUG org.example.Main - 2222
-2026-04-18 09:55:14.676 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 09:55:18.390 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-18 09:55:28.393 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Timeout!
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+2026-05-15 20:48:43.932 [main] DEBUG org.example.Main - se.ifmo.ru
+2026-05-15 20:48:43.939 [main] DEBUG org.example.Main - 3333
+2026-05-15 20:48:43.971 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 20:48:58.213 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Receive timed out
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:65)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 09:56:21.737 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-18 09:56:31.746 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Timeout!
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:49:24.643 [main] DEBUG org.example.Main - localhost
+2026-05-15 20:49:24.644 [main] DEBUG org.example.Main - 2222
+2026-05-15 20:49:24.663 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 20:49:26.800 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Команда не найдена
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:67)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 09:57:14.392 [main] DEBUG org.example.Main - localhost
-2026-04-18 09:57:14.393 [main] DEBUG org.example.Main - 2222
-2026-04-18 09:57:14.429 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 09:57:16.223 [main] INFO  org.example.UdpClient - Package sent localhost/127.0.0.1:2222
-2026-04-18 09:57:26.224 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Timeout!
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:49:40.017 [main] DEBUG org.example.cli.FieldPromptService - Invalid argument: g
+2026-05-15 20:49:40.557 [main] DEBUG org.example.cli.FieldPromptService - Invalid argument: g
+2026-05-15 20:50:31.982 [main] DEBUG org.example.Main - localhost
+2026-05-15 20:50:31.983 [main] DEBUG org.example.Main - 2222
+2026-05-15 20:50:32.001 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 20:50:34.872 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Please log in your account or register new
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:68)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 09:57:35.566 [main] DEBUG org.example.Main - se.ifmo.ru
-2026-04-18 09:57:35.567 [main] DEBUG org.example.Main - 51492
-2026-04-18 09:57:35.626 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 09:57:37.953 [main] INFO  org.example.UdpClient - Package sent se.ifmo.ru/77.234.196.4:51492
-2026-04-18 09:57:47.955 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Timeout!
-	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:57)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:50:42.103 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Please log in your account or register new
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:68)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 09:58:14.660 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 09:58:14.662 [main] DEBUG org.example.Main - 2222
-2026-04-18 09:58:14.688 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 09:58:16.526 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-18 09:58:16.657 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-18 14:16:51.962 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 14:16:51.964 [main] DEBUG org.example.Main - 2222
-2026-04-18 14:16:51.989 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 14:17:27.810 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-18 14:17:27.959 [main] INFO  org.example.UdpClient - Package sent /194.87.68.237:2222
-2026-04-18 15:13:00.109 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:13:00.111 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:13:00.143 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:35:43.263 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:35:43.265 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:35:43.298 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:37:59.073 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:37:59.075 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:37:59.098 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:38:03.121 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.example.command.fields.Field.getValue()" is null
-	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:50:51.280 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: org.example.requests.AuthRequest
+	at org.example.controllers.NetworkController.handle(NetworkController.java:43)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 15:40:49.022 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:40:49.024 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:40:49.048 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:40:51.455 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: Cannot invoke "org.example.command.fields.IntField.getValue()" because the return value of "org.example.command.fields.Field.getValue()" is null
-	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:51:22.580 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: org.example.requests.AuthRequest
+	at org.example.controllers.NetworkController.handle(NetworkController.java:43)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 15:40:53.521 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: class java.lang.Integer cannot be cast to class org.example.command.fields.IntField (java.lang.Integer is in module java.base of loader 'bootstrap'; org.example.command.fields.IntField is in unnamed module of loader 'app')
-	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 20:59:17.718 [main] DEBUG org.example.Main - localhost
+2026-05-15 20:59:17.722 [main] DEBUG org.example.Main - 2222
+2026-05-15 20:59:17.763 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 20:59:23.764 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: org.example.requests.AuthRequest
+	at org.example.controllers.NetworkController.handle(NetworkController.java:43)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 15:43:07.404 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:43:07.405 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:43:07.432 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:43:10.489 [main] WARN  org.example.cli.CLI - Exception:
-org.example.exceptions.NetworkException: class java.lang.Integer cannot be cast to class org.example.command.fields.IntField (java.lang.Integer is in module java.base of loader 'bootstrap'; org.example.command.fields.IntField is in unnamed module of loader 'app')
-	at org.example.controllers.NetworkController.handle(NetworkController.java:39)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:00:48.236 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Please log in your account or register new
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:68)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:02:11.687 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: org.example.requests.AuthRequest
+	at org.example.controllers.NetworkController.handle(NetworkController.java:43)
 	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
-	at org.example.cli.CLI.exec(CLI.java:121)
-	at org.example.Main.main(Main.java:39)
-2026-04-18 15:44:15.600 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:44:15.602 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:44:15.629 [main] DEBUG org.example.Main - App started via CLI
-2026-04-18 15:45:25.824 [main] DEBUG org.example.Main - 194.87.68.237
-2026-04-18 15:45:25.827 [main] DEBUG org.example.Main - 2222
-2026-04-18 15:45:25.856 [main] DEBUG org.example.Main - App started via CLI
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:11:08.638 [main] DEBUG org.example.Main - localhost
+2026-05-15 21:11:08.639 [main] DEBUG org.example.Main - 2222
+2026-05-15 21:11:08.668 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 21:11:17.894 [main] WARN  org.example.UdpDatagramClient - Wrong type:AuthSuccess[token=VhpuIuwCmoi_bnxn9NsqbTEY3wOlbX-Vp2Ew-LkjCXI, id=f82e829f-64ae-4bdd-b919-fe445c148797]
+2026-05-15 21:11:17.903 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Wrong type
+	at org.example.controllers.NetworkController.handle(NetworkController.java:45)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:15:50.016 [main] DEBUG org.example.Main - localhost
+2026-05-15 21:15:50.018 [main] DEBUG org.example.Main - 2222
+2026-05-15 21:15:50.102 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 21:15:59.545 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Db error
+	at org.example.controllers.NetworkController.handle(NetworkController.java:48)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:16:35.868 [main] DEBUG org.example.cli.FieldPromptService - Invalid argument: 1.0
+2026-05-15 21:17:11.482 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: ОШИБКА: нет уникального ограничения или ограничения-исключения, соответствующего указанию ON CONFLICT
+	at org.example.controllers.NetworkController.handle(NetworkController.java:48)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:21:04.312 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: ОШИБКА: столбец "albums_count" в таблице "band" не существует
+  Позиция: 104
+	at org.example.controllers.NetworkController.handle(NetworkController.java:48)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:50)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)
+2026-05-15 21:21:51.749 [main] DEBUG org.example.Main - localhost
+2026-05-15 21:21:51.751 [main] DEBUG org.example.Main - 2222
+2026-05-15 21:21:51.769 [main] DEBUG org.example.Main - App started via CLI
+2026-05-15 21:22:59.506 [main] WARN  org.example.cli.CLI - Exception:
+org.example.exceptions.NetworkException: Команда не найдена
+	at org.example.controllers.NetworkController.getCommandModel(NetworkController.java:71)
+	at org.example.cli.CLI.handleRegularCommand(CLI.java:44)
+	at org.example.cli.CLI.exec(CLI.java:123)
+	at org.example.Main.main(Main.java:38)

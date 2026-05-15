@@ -17,6 +17,11 @@
             <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.11</version> <!-- проверьте актуальную версию на Maven Central -->
+        </dependency>
     </dependencies>
     <!-- server/pom.xml -->
     <build>

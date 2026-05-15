@@ -1,9 +1,11 @@
-package org.example.model;
+package org.example;
 
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.example.command.CommandRegistry;
 import org.example.exceptions.CommandExecutionException;
+import org.example.model.MusicBand;
+import org.example.model.ZonedDateTimeAdapter;
 
 import java.io.*;
 import java.time.ZonedDateTime;
@@ -12,7 +14,7 @@ import java.util.stream.IntStream;
 
 @XmlRootElement(name="Context")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Context {
+public class OneTreadContext {
     @XmlElement(name="MusicBand")
     private Stack<MusicBand> store = new Stack<>();
     @XmlTransient
@@ -25,7 +27,7 @@ public class Context {
 
     private boolean revertSortOrderFlag = false;
 
-    public Context() {}
+    public OneTreadContext() {}
 
     public Stack<MusicBand> getStore() {
         return store;
@@ -91,7 +93,7 @@ public class Context {
 
     public void saveToFile(String path) throws CommandExecutionException {
         try {
-            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
+            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(OneTreadContext.class);
             jakarta.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(jakarta.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
             StringWriter s = new StringWriter();
@@ -107,16 +109,16 @@ public class Context {
 
     }
 
-    public static Context loadFromFile(String path) throws Exception {
+    public static OneTreadContext loadFromFile(String path) throws Exception {
         try {
             var sc = new Scanner(new File(path));
             sc.useDelimiter("\\A");
             String xmlContent = sc.hasNext() ? sc.next() : "";
             sc.close();
 
-            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(Context.class);
+            jakarta.xml.bind.JAXBContext context = jakarta.xml.bind.JAXBContext.newInstance(OneTreadContext.class);
             jakarta.xml.bind.Unmarshaller unmarshaller = context.createUnmarshaller();
-            return (Context) unmarshaller.unmarshal(new StringReader(xmlContent));
+            return (OneTreadContext) unmarshaller.unmarshal(new StringReader(xmlContent));
         } catch (Exception e) {
             throw new CommandExecutionException(e.getMessage());
         }

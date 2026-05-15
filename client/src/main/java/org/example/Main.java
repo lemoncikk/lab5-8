@@ -4,7 +4,6 @@ import com.williamcallahan.tui4j.compat.bubbletea.Program;
 import lombok.extern.slf4j.Slf4j;
 import org.example.cli.CLI;
 import org.example.controllers.NetworkController;
-import org.example.tui.view.BandList;
 
 import java.io.IOException;
 @Slf4j
@@ -26,13 +25,13 @@ public class Main {
         log.debug(hostname);
         log.debug(String.valueOf(port));
         var ntCtrl = new NetworkController(port, hostname);
-        if (args.length >= 1 && args[0].trim().equalsIgnoreCase("tui")) {
-            BandList model = new BandList(ntCtrl);
-            Program program = new Program(model);
-            program.run();
-            log.debug("App started via TUI");
-            return;
-        }
+//        if (args.length >= 1 && args[0].trim().equalsIgnoreCase("tui")) {
+//            BandList model = new BandList(ntCtrl);
+//            Program program = new Program(model);
+//            program.run();
+//            log.debug("App started via TUI");
+//            return;
+//        }
         var client = new CLI(ntCtrl);
         log.debug("App started via CLI");
         try {
