@@ -212,3 +212,5 @@ org.example.exceptions.CommandNotFoundException: Команда не найде�
 2026-05-15 21:23:12.458 [pool-1-thread-8] INFO  org.example.UdpServer - Request from: /127.0.0.1:62479 (toString: /127.0.0.1:62479)
 2026-05-15 21:23:12.459 [pool-2-thread-1] DEBUG org.example.UdpServer - Command show is handled
 2026-05-15 21:23:12.467 [pool-3-thread-1] DEBUG org.example.UdpServer - Package sent /127.0.0.1:62479
+2026-05-15 22:46:34.178 [main] INFO  org.example.TreadSafeContext - Loaded 1 bands from database
+2026-05-15 22:46:34.661 [main] INFO  org.example.UdpServer - Сервер запущен на порту: /[0:0:0:0:0:0:0:0]:2222
